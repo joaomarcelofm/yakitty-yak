@@ -11,8 +11,7 @@ class User < ApplicationRecord
     puts auth.to_h
 
     user_params = auth.slice(:provider, :uid)
-    user_params.merge! auth.info.slice(:email, :name)
-    user_params[:team_id] = auth.info.team_id
+    user_params.merge! auth.info.slice(:email, :name, :team_id)
     user_params[:token] = auth.credentials.token
     user_params[:token_expiry] = auth.credentials.expires
     user_params = user_params.to_h

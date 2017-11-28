@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20171128181628) do
     t.string "provider"
     t.string "uid"
     t.string "name"
-    t.integer "user_uid"
     t.integer "team_id"
     t.string "token"
     t.boolean "token_expiry"
