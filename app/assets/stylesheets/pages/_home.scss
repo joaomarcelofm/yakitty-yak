@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+.home-wrapper {
+  background-color: $yak-green;
+  height: 70vh;
+  width: 100%;
+
+  h1 {
+    color: $yak-white;
+    margin-top: 0px;
+  }
+}
+
+svg {
+  width: 100%;
+}
