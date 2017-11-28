@@ -1,2 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-wrapper">
+  <div class="container">
+    <div class="title">
+      <h1 class="text-center">Lets Yakitty-Yak</h1>
+      <h2 class="text-center">Chatting with work friends has never been this <strong>fun</strong>!</h2>
+    </div>
+    <%= link_to 'Add Yakitty-Yak to Slack', "https://slack.com/oauth/authorize?scope=identity.basic,identity.avatar&client_id=278333923347.278335215347", class: "btn btn-primary" %>
+  </div>
+</div>
+<svg width="500" height="100" viewBox="0 0 500 80" preserveAspectRatio="none">
+  <path d="M0,0 L0,40 Q250,80 500,40 L500,0 Z" fill="#1A535C" />
+</svg>
