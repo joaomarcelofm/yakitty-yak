@@ -14,6 +14,7 @@ Devise.setup do |config|
   # with default "from" parameter.
 
 
+
   config.omniauth :slack, ENV['SLACK_APP_ID'], ENV['SLACK_APP_SECRET'], scope: 'identity.basic', 'users.identity'
 
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
