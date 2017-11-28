@@ -1,4 +1,4 @@
 class Meeting < ApplicationRecord
-  belongs_to :user_one, class_name: 'User'
-  belongs_to :user_two, class_name: 'User'
+  has_many :user_meetings
+  has_many :users, through: :user_meetings
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171128140052) do
+ActiveRecord::Schema.define(version: 20171128152458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,9 @@ ActiveRecord::Schema.define(version: 20171128140052) do
   create_table "meetings", force: :cascade do |t|
     t.date "date"
     t.time "time"
-    t.bigint "user_one_id"
-    t.bigint "user_two_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_one_id"], name: "index_meetings_on_user_one_id"
-    t.index ["user_two_id"], name: "index_meetings_on_user_two_id"
+    t.string "room_name"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -48,6 +45,15 @@ ActiveRecord::Schema.define(version: 20171128140052) do
     t.datetime "updated_at", null: false
     t.index ["interest_id"], name: "index_user_interests_on_interest_id"
     t.index ["user_id"], name: "index_user_interests_on_user_id"
+  end
+
+  create_table "user_meetings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "meeting_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meeting_id"], name: "index_user_meetings_on_meeting_id"
+    t.index ["user_id"], name: "index_user_meetings_on_user_id"
   end
 
   create_table "user_skills", force: :cascade do |t|
@@ -76,10 +82,10 @@ ActiveRecord::Schema.define(version: 20171128140052) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "meetings", "users", column: "user_one_id"
-  add_foreign_key "meetings", "users", column: "user_two_id"
   add_foreign_key "user_interests", "interests"
   add_foreign_key "user_interests", "users"
+  add_foreign_key "user_meetings", "meetings"
+  add_foreign_key "user_meetings", "users"
   add_foreign_key "user_skills", "skills"
   add_foreign_key "user_skills", "users"
 end

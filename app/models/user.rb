@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  has_many :meetings, foreign_key: 'user_one'
+  has_many :user_meetings
+  has_many :meetings, through: :user_meetings
+
 end
