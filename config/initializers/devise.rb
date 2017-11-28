@@ -13,10 +13,9 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
 
-
-  config.omniauth :slack, ENV["SLACK_APP_ID"], ENV["SLACK_APP_SECRET"], scope: 'client'
-
-
+  provider :slack, 'API_KEY', 'API_SECRET', scope: 'identity.basic', name: :sign_in_with_slack
+  provider :slack, 'API_KEY', 'API_SECRET', scope: 'team:read,users:read,identify,bot'
+  
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
