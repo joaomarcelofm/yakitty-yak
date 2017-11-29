@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get 'meetings/new'
-
-  get 'meetings/show'
-
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    get '/meetings', to: "pages#meetings"
+
+
+  resources :meetings do
+    resources :meetings, only: [:new, :show]
+  end
+
 end
