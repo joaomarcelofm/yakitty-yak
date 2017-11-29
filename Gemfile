@@ -17,7 +17,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'omniauth-slack'
-
+gem 'twilio-ruby', '~> 5.5.0'
 
 group :development, :test do
   gem 'pry-byebug'

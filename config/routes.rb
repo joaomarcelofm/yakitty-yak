@@ -3,4 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'pages/form', to: 'pages#form'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    get '/meetings', to: "pages#meetings"
+
+
+  resources :meetings do
+    resources :meetings, only: [:new, :show]
+  end
+
 end
