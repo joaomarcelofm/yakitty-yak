@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:slack]
@@ -38,7 +36,6 @@ class User < ApplicationRecord
     end
     return user
   end
-
 
   has_many :user_meetings
   has_many :meetings, through: :user_meetings

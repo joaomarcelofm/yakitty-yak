@@ -1,0 +1,12 @@
+<div class="form-container">
+<h1>Tell us more about you!</h1>
+<%= simple_form_for current_user do |f| %>
+  <% f.input :name %>
+  <% f.input :location %>
+  <% f.input :occupation %>
+  <% f.input :bio %>
+  <%= f.submit %>
+<% end %>
+</div>
+
+

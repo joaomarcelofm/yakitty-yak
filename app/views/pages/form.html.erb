@@ -1,31 +1,70 @@
-<form>
+<div class="form-container">
+<h1>Tell us more about you!</h1>
+<%= simple_form_for current_user do |f| %>
+  <% f.input :name %>
+  <% f.input :location %>
+  <% f.input :occupation %>
+  <% f.input :bio %>
+  <% f.input %>
+  <% f.input %>
+  <% f.input %>
+<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form>
   <input id="input-1" type="text" placeholder="John Doe" required autofocus />
   <label for="input-1">
     <span class="label-text">Full Name</span>
     <span class="nav-dot"></span>
-    <div class="signup-button-trigger">Sign Up</div>
+    <div class="signup-button-trigger">Edit</div>
   </label>
-  <input id="input-2" type="text" placeholder="john" required />
+  <input id="input-2" type="text" placeholder="Berlin" required />
   <label for="input-2">
-    <span class="label-text">Username</span>
+    <span class="label-text">Location</span>
     <span class="nav-dot"></span>
   </label>
-  <input id="input-3" type="email" placeholder="email@address.com" required />
+  <input id="input-3" type="text" placeholder="Ruby Developer" required />
   <label for="input-3">
-    <span class="label-text">Email</span>
+    <span class="label-text">Occupation</span>
     <span class="nav-dot"></span>
   </label>
-  <input id="input-4" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required />
+  <input id="input-4" type="text" placeholder="Tell us some interesting shit" required />
   <label for="input-4">
-    <span class="label-text">Password</span>
+    <span class="label-text">Bio</span>
     <span class="nav-dot"></span>
   </label>
-  <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required />
+  <input id="input-5" type="text" placeholder="dunno" required />
   <label for="input-5">
-    <span class="label-text">Confirm Password</span>
+    <span class="label-text">Blah</span>
     <span class="nav-dot"></span>
   </label>
-  <button type="submit">Create Your Account</button>
+  <button type="submit">Create your profile</button>
   <p class="tip">Press Tab</p>
-  <div class="signup-button">Sign Up</div>
+  <div class="profile-button">Update</div>
 </form>
+
+ -->
