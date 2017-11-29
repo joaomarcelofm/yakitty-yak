@@ -9,7 +9,7 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
 
     user_params = auth.slice(:provider, :uid)
-    user_params.merge! auth.info.slice(:email, :name)
+    user_params.merge! auth.info.slice(:email, :name, :image)
     team = Team.find_by(team_uid: auth.info.team_id)
 
     if team
