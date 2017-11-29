@@ -185,6 +185,10 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    twilio-ruby (5.5.0)
+      faraday (~> 0.9)
+      jwt (>= 1.5, <= 2.5)
+      nokogiri (>= 1.6, < 2.0)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
@@ -223,6 +227,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  twilio-ruby (~> 5.5.0)
   uglifier
   web-console (>= 3.3.0)
 

@@ -44,4 +44,6 @@ class User < ApplicationRecord
   has_many :meetings, through: :user_meetings
   belongs_to :team
 
+  has_many :user_meetings
+  has_many :meetings, through: :user_meetings
 end

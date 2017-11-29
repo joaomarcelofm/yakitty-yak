@@ -1,0 +1,71 @@
+<h1>Yakitty Yak</h1>
+
+<h2> Welcome to room: <%= @meeting.room_name %> </h2>
+<div id="remoteParticipant"></div>
+<div id="videoPreview"></div>
+
+
+
+
+
+<%= content_for(:after_js) do %>
+  <script src="//media.twiliocdn.com/sdk/js/video/v1/twilio-video.min.js"></script>
+  <script>
+    Twilio.Video.connect('<%= @token %>', {name:'<%= @meeting.room_name %>'}).then(function(room) {
+      console.log('Successfully joined a Room: ', room);
+      // add local video to page
+      logExistingParticipants(room.participants)
+      displayLocalTrack(room.localParticipant)
+      room.participants.forEach(displayRemoteParticipantVideo)
+      room.on('participantConnected', function(participant) {
+        console.log('A remote Participant connected: ', participant);
+        displayRemoteParticipantVideo(participant)
+        })
+      room.on('participantDisconnected', function(participant) {
+        console.log('A remote Participant disconnected: ', participant);
+        removeRemoteParticipantVideo(participant)
+      })
+    }, function(error) {
+        console.error('Unable to connect to Room: ' +  error.message);
+    });
+
+    function displayRemoteParticipantVideo(participant) {
+      console.log("display remote participant video")
+      const div = document.createElement('div')
+      div.id = participant.sid
+
+      participant.on('trackAdded', track => trackAdded(div, track))
+      participant.tracks.forEach(track => {trackAdded(div, track)})
+      const remotePart = document.getElementById("remoteParticipant")
+      remotePart.appendChild(div);
+
+    }
+
+    function logExistingParticipants(participants) {
+      participants.forEach(participant => {
+        console.log('Participant "%s" is connected to the Room', participant.identity)
+      })
+    }
+
+    function displayLocalTrack(participant) {
+      participant.tracks.forEach(track => {
+        console.log("local")
+        document.getElementById('videoPreview').appendChild(track.attach());
+      });
+    }
+
+    function removeRemoteParticipantVideo(participant) {
+      participant.tracks.forEach(trackRemoved);
+      document.getElementById(participant.sid).remove();
+    }
+
+    function trackRemoved(track) {
+      track.detach().forEach(element => element.remove())
+    }
+
+    function trackAdded(div, track) {
+      div.appendChild(track.attach());
+    }
+  </script>
+<% end %>
+
