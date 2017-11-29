@@ -15,6 +15,7 @@ Devise.setup do |config|
 
   config.omniauth :slack, ENV['SLACK_APP_ID'], ENV['SLACK_APP_SECRET'], scope: 'team:read,users:read,users:read.email,identify'
 
+
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
