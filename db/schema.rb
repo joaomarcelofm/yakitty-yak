@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 20171128181628) do
     t.string "provider"
     t.string "uid"
     t.string "name"
-    t.integer "team_id"
+    t.string "team_id"
     t.string "token"
     t.boolean "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true
