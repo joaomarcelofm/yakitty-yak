@@ -1,2 +1,28 @@
-<h1>Meetings#new</h1>
+<head>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<h1>Create a meeting</h1>
 <p>Find me in app/views/meetings/new.html.erb</p>
+
+<div id="remote-media"></div>
+<div id="controls">
+  <div id="preview">
+    <p class="instructions">Hello Yakkity </p>
+    <div id="local-media"></div>
+    <button id="button-preview">Camera Preview</button>
+  </div>
+  <div id="room-controls">
+    <p class="instructions">Room Name:</p>
+    <input id="room-name" type="text" placeholder="Enter a room name" />
+    <button id="button-join">Join Room</button>
+    <button id="button-leave">Leave Room</button>
+  </div>
+  <div id="log"></div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
