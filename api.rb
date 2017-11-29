@@ -2,9 +2,6 @@
 
 # #twilio requires us to 1) get tokens and create
 
-# # put your own credentials here
-# account_sid = 'ACa9081cc002ee2a814cc7fdbb745a0abf'
-# auth_token = '87ad1cfb53346fcac1938013e4fe46a4'
 
 # # set up a client to talk to the Twilio REST API
 # client = Twilio::REST::Client.new account_sid, auth_token
