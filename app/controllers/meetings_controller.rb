@@ -22,7 +22,7 @@ class MeetingsController < ApplicationController
 
   private
 
-  def item_params
+  def meeting_params
     params.require(:meeting).permit(:room_name, :date, :time)
   end
 
