@@ -1,2 +1,7 @@
-<h1>Requests#new</h1>
-<p>Find me in app/views/requests/new.html.erb</p>
+
+
+<%= simple_form_for [@transaction, @review] do |f| %>
+<%= f.input :topic, label: "What would you like to discuss?", placeholder: "Freelance life, Ruby on Rails..." %>
+<%= f.collection_radio_buttons :start_time, [[Date.today, 'Today'] ,[Date.tomorrow, 'Tomorrow']] %>
+<%= f.submit " Submit ", :class => "btn btn-primary transaction-button" %>
+<% end %>
