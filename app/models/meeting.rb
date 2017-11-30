@@ -1,6 +1,6 @@
 class Meeting < ApplicationRecord
-  has_many :user_meetings
-  has_many :users, through: :user_meetings
+  belongs_to :request
+  has_many :users, through: :requests
 
   validates :room_name, presence: true
 
