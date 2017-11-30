@@ -1,7 +1,7 @@
 class MeetingsController < ApplicationController
 
   def new
-  @meeting = Meeting.new(meeting_params)
+    @meeting = Meeting.new(meeting_params)
   end
 
   def create
@@ -23,7 +23,7 @@ class MeetingsController < ApplicationController
   private
 
   def meeting_params
-    params.require(:meeting).permit(:room_name, :date, :time)
+    # params.require(:meeting).permit(:room_name, :date, :time)
   end
 
   def generate_token(identity)
