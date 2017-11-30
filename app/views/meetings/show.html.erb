@@ -2,8 +2,10 @@
 
 <h2> Welcome to room: <%= @meeting.room_name %> </h2>
 <h3> You are chatting with <%=  %></h3>
-<div id="remoteParticipant"></div>
-<div id="videoPreview"></div>
+<div class="video-asset">
+  <div id="remoteParticipant"></div>
+  <div id="videoPreview"></div>
+</div>
 
 
 <%= content_for(:after_js) do %>
