@@ -1,9 +1,21 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:slack]
+
+
+  has_many :user_meetings
+  has_many :meetings, through: :user_meetings
+
+  belongs_to :team
+
+  has_many :user_skills
+  has_many :skills, through: :user_skills
+
+  has_many :user_interests
+  has_many :interests, through: :user_interests
+
+  # accepts_nested_attributes_for :skills
 
 
   def self.from_omniauth(auth)
@@ -39,11 +51,4 @@ class User < ApplicationRecord
     return user
   end
 
-
-  has_many :user_meetings
-  has_many :meetings, through: :user_meetings
-  belongs_to :team
-
-  has_many :user_meetings
-  has_many :meetings, through: :user_meetings
 end
