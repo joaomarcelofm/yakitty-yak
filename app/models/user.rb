@@ -3,8 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:slack]
 
-  has_many :user_meetings
-  has_many :meetings, through: :user_meetings
+  has_many :requests
+  has_many :meetings, through: :requests
 
   belongs_to :team
 
