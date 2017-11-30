@@ -5,6 +5,9 @@
       <h2>Chatting with work friends has never been this <strong>fun</strong>!</h2>
     </div>
     <%= link_to 'Add Yakitty-Yak to Slack', "https://slack.com/oauth/authorize?scope=identity.basic,identity.avatar&client_id=278333923347.278335215347", class: "btn btn-primary" %>
+    <% if current_user %>
+    <%= link_to 'Edit your Profile!', edit_user_path(current_user), class: "btn btn-info" %>
+    <% end %>
   </div>
 </div>
 <svg width="500" height="100" viewBox="0 0 500 80" preserveAspectRatio="none">
