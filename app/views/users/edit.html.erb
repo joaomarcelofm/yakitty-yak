@@ -1,10 +1,12 @@
-<div class="form-container">
+<div class="form-container text-center">
 <h1>Tell us more about you!</h1>
 <%= simple_form_for current_user do |f| %>
-  <% f.input :name %>
-  <% f.input :location %>
-  <% f.input :occupation %>
-  <% f.input :bio %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :occupation %>
+  <%= f.input :bio %>
+  <%= f.association :skills, collection: Skill.all, as: :check_boxes, multiple: true %>
+
   <%= f.submit %>
 <% end %>
 </div>

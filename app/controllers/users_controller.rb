@@ -8,7 +8,15 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(set_user_params)
+    params_user = set_user_params.except(:skill_ids)
+
+    if params[:user][:skill_ids].present?
+      skills = params[:user][:skill_ids].reject(&:empty?)
+      @user.skill_ids = skills
+      @user.save
+    end
+
+    @user.update(params_user)
     redirect_to @user
   end
 
@@ -19,6 +27,6 @@ class UsersController < ApplicationController
   end
 
   def set_user_params
-    params.require(:user).permit(:name, :location, :occupation, :bio)
+    params.require(:user).permit(:name, :location, :occupation, :bio, skill_ids: [:id])
   end
 end

@@ -4,6 +4,21 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:slack]
 
 
+  has_many :user_meetings
+  has_many :meetings, through: :user_meetings
+
+  belongs_to :team
+
+  # has_many :user_skills
+  # has_many :skills, through: :user_skills
+  has_and_belongs_to_many :skills, join_table: :user_skills
+
+  has_many :user_interests
+  has_many :interests, through: :user_interests
+
+  # accepts_nested_attributes_for :skills
+
+
   def self.from_omniauth(auth)
 
     user_params = auth.slice(:provider, :uid)
@@ -37,10 +52,4 @@ class User < ApplicationRecord
     return user
   end
 
-  has_many :user_meetings
-  has_many :meetings, through: :user_meetings
-  belongs_to :team
-
-  has_many :user_meetings
-  has_many :meetings, through: :user_meetings
 end
