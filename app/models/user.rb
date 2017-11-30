@@ -9,9 +9,8 @@ class User < ApplicationRecord
 
   belongs_to :team
 
-  # has_many :user_skills
-  # has_many :skills, through: :user_skills
-  has_and_belongs_to_many :skills, join_table: :user_skills
+  has_many :user_skills
+  has_many :skills, through: :user_skills
 
   has_many :user_interests
   has_many :interests, through: :user_interests
