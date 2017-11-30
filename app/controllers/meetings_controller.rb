@@ -1,6 +1,19 @@
 class MeetingsController < ApplicationController
+
   def new
+  @meeting = Meeting.new(meeting_params)
   end
+
+  def create
+    @meeting = Meeting.new(meeting_params)
+    @meeting.user = current_user
+    if @meeting.save
+      redirect_to @meeting
+    else
+      render 'new'
+    end
+  end
+
 
   def show
     @meeting = Meeting.find(params[:id])
@@ -9,8 +22,8 @@ class MeetingsController < ApplicationController
 
   private
 
-  def connect(token, room)
-    puts "you have joined the room"
+  def meeting_params
+    params.require(:meeting).permit(:room_name, :date, :time)
   end
 
   def generate_token(identity)
