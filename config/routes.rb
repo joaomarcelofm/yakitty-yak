@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'requests/new'
+
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks", users: "users/users" }
 
   resources :users, only: [:show, :edit, :update]
