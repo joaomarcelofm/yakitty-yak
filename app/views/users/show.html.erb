@@ -4,9 +4,14 @@
 <p>Location: <%= current_user.location %></p>
 <p>Occupation: <%= current_user.occupation %></p>
 <p>Bio: <%= current_user.bio %></p>
-<ul><p>Skills:</p>
+<ul class="list-inline"><p>Skills:</p>
   <% current_user.skills.each do |skill| %>
     <li><%= skill.name %></li>
+  <% end %>
+</ul>
+<ul class="list-inline"><p>Interested in learning more about:</p>
+  <% current_user.interests.each do |interest| %>
+    <li><%= interest.name %></li>
   <% end %>
 </ul>
 </div>
