@@ -1,10 +1,18 @@
-<h1>Yakitty Yak</h1>
+<div class="container">
+  <div class="row">
+    <div class="meeting-wrapper">
+      <div class="video-asset col-md-8">
+        <div id="remoteParticipant"></div>
+        <div id="videoPreview"></div>
+      </div>
+      <div class="user-info col-md-4">
+        <h1>Yakitty Yak</h1>
 
-<h2> Welcome to room: <%= @meeting.room_name %> </h2>
-<h3> You are chatting with <%=  %></h3>
-<div class="video-asset">
-  <div id="remoteParticipant"></div>
-  <div id="videoPreview"></div>
+        <h2> Welcome to room: <%= @meeting.room_name %> </h2>
+        <h3> You are chatting with <%=  %></h3>
+      </div>
+    </div>
+  </div>
 </div>
 
 

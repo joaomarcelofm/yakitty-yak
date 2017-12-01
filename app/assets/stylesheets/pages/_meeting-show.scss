@@ -1,20 +1,27 @@
-.video-asset {
-  position: relative;
+.meeting-wrapper {
+  margin-top: 30px;
+  height: 585px;
 }
 
-#RemoteParticpant {
+.video-asset {
+  position: relative;
+  padding: 0px;
+}
+
+#remoteParticipant {
+
   video {
-  height: 700px;
+  width: 100%;
   }
 }
 
-#VideoPreview {
+#videoPreview {
   position: absolute;
   bottom: 20px;
   right: 20px;
 
   video {
-  height: 100px !important;
+  height: 100px;
   }
 }
 
