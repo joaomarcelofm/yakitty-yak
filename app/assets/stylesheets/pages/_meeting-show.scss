@@ -3,12 +3,18 @@
 }
 
 #RemoteParticpant {
+  video {
   height: 700px;
+  }
 }
 
 #VideoPreview {
-  height: 100px;
   position: absolute;
   bottom: 20px;
   right: 20px;
+
+  video {
+  height: 100px !important;
+  }
 }
+
