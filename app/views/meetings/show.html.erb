@@ -6,10 +6,10 @@
         <div id="videoPreview"></div>
       </div>
       <div class="user-info col-md-4">
-        <h1>Yakitty Yak</h1>
+        <h1>Yakitty Yak Chat</h1>
 
-        <h2> Welcome to room: <%= @meeting.room_name %> </h2>
-        <h3> You are chatting with <%=  %></h3>
+        <h3> You are chatting with: <%= @meeting.request.receiver.name %></h3>
+        <h3> Discussion topic: <%= @meeting.request.topic  %></h3>
       </div>
     </div>
   </div>
