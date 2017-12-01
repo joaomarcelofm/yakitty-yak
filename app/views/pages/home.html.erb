@@ -4,9 +4,13 @@
     <div class="inner-content">
     <div class="title">
       <h1>Lets Yakitty-Yak</h1>
-      <h2> Facilitating collaboration and connection with your network </h2>
+      <h2> Easy connection & collaboration with your network </h2>
     </div>
+
     <% unless current_user %>
+
+    <br>
+
     <%= link_to user_slack_omniauth_authorize_path do %>
     <img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" />
     <% end %>
