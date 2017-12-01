@@ -1,4 +1,164 @@
-.form-container {
-  margin: 0 auto;
-  width: 600px;
+// body {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100vh;
+//   background-color: #90dcfe;
+//   cursor: url("https://image.ibb.co/nofzfk/cursor_smallest.png") 20 20, auto;
+// }
+
+.vertical-form-container {
+  height: calc(100vh - 70px);
+  // width: 700px;
+  position: relative;
+  cursor: url("https://image.ibb.co/nofzfk/cursor_smallest.png") 20 20, auto;
+
+// .vertical-form-container:after {
+//   content: ' ';
+//   position: absolute;
+//   top: calc(100% + 5px);
+//   left: 0;
+//   display: inline-block;
+//   height: 30px;
+//   width: 100%;
+//   background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+//   filter: blur(10px);
+//   z-index: 1;
+// }
 }
+.vertical-form {
+  height: 100%;
+  width: 100%;
+  background-color: #02A8F3;
+  position: relative;
+  overflow: hidden;
+//   border-radius: 8px;
+ }
+.vertical-form .step {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  background-color: #02A8F3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Helvetica, sans-serif;
+}
+.vertical-form .step .title {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+.vertical-form .step > * {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.vertical-form .step.step-2 {
+  background-color: #0285c0;
+}
+.vertical-form .step.step-3 {
+  background-color: #01628e;
+}
+.vertical-form .step.active {
+  visibility: visible;
+  transform: translateY(0);
+  z-index: 2;
+}
+.vertical-form .step.active > * {
+  opacity: 1;
+}
+.vertical-form .step.previous {
+  visibility: visible;
+  transform: translateY(-100%);
+}
+.vertical-form .step.next {
+  visibility: visible;
+  transform: translateY(calc(100% - 67px)) scaleX(1.3333);
+  // border-radius: 50%;
+  z-index: 2;
+}
+.vertical-form .step.sliding-out {
+  animation: slidingOut 1s ease forwards;
+}
+@keyframes slidingOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+.vertical-form .step.sliding-in {
+  animation: slidingIn 1s ease forwards;
+}
+@keyframes slidingIn {
+  from {
+    transform: translateY(calc(100% - 67px)) scaleX(1.3333);
+    border-radius: 70%;
+  }
+  to {
+    transform: translateY(0) scaleX(1);
+    border-radius: 0;
+  }
+}
+
+.vertical-form i {
+
+  position: absolute;
+  bottom: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  // border-radius: 50%;
+  // padding: 8px;
+  // background-color: white;
+  // box-shadow: 0 1px 0 black;
+  z-index: 3;
+}
+.vertical-form i.animating {
+
+  animation: animating 1s linear;
+}
+
+@keyframes animating {
+  0% {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+  15% {
+    transform: translateY(-100%) translateX(-50%);
+    opacity: 0;
+  }
+  85% {
+    transform: translateY(100%) translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+}
+
+.content {
+  font-size: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.down-arrow-form, .up-arrow-image {
+  height: 50px;
+
+}
+
+.up-arrow-form{
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  z-index: 3;
+  transform: translateX(-50%);
+}
+

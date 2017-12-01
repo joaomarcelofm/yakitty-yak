@@ -1,20 +1,38 @@
-<div class="form-container">
-<h1>Tell us more about you!</h1>
-<%= simple_form_for current_user do |f| %>
-  <% f.input :name %>
-  <% f.input :location %>
-  <% f.input :occupation %>
-  <% f.input :bio %>
-  <% f.input %>
-  <% f.input %>
-  <% f.input %>
-<% end %>
+
+<div class="vertical-form-container">
+  <div class="vertical-form">
+    <span class="up-arrow-form"><%= image_tag "down-arrow.png", class: "up-arrow-image" %></span>
+    <div class="step active step-1">
+
+      <div class="title">Hi there!</div>
+      <div class="content">Tell us about yourself <br> (don't worry, this won't take long)</div>
+
+    </div>
+    <div class="step step-2 next">
+
+      <form action="/action_page.php" method="get">
+        What's your name? <input type="text" name="name"><br>
+      </form>
+    </div>
+    <div class="step step-3 next">
+      <div class="title">Inspirational lorem</div>
+      <div class="content">..is more than just ipsum</div>
+    </div>
+    <div class="step step-4 next">
+      <div class="title">Inspirational lorem</div>
+      <div class="content">..is more than just ipsum</div>
+    </div>
+    <div class="step step-5">
+      <div class="title">It's done</div>
+      <div class="content">Have a fantastic day</div>
+    </div>
+    <i><%= image_tag "down-arrow.png", class: "down-arrow-form" %></i>
+
+  </div>
 </div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 
-
-
-
-
+<script src="assets/form.js"></script>
 
 
 
