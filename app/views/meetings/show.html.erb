@@ -1,11 +1,11 @@
 <h1>Yakitty Yak</h1>
 
 <h2> Welcome to room: <%= @meeting.room_name %> </h2>
-<div id="remoteParticipant"></div>
-<div id="videoPreview"></div>
-
-
-
+<h3> You are chatting with <%=  %></h3>
+<div class="video-asset">
+  <div id="remoteParticipant"></div>
+  <div id="videoPreview"></div>
+</div>
 
 
 <%= content_for(:after_js) do %>
@@ -58,14 +58,19 @@
       participant.tracks.forEach(trackRemoved);
       document.getElementById(participant.sid).remove();
     }
+    function trackAdded(div, track) {
+      div.appendChild(track.attach());
+    }
 
     function trackRemoved(track) {
       track.detach().forEach(element => element.remove())
     }
 
-    function trackAdded(div, track) {
-      div.appendChild(track.attach());
-    }
   </script>
 <% end %>
+
+<%= link_to 'Leave Room', root_path, class: 'btn btn-danger'%>
+
+
+
 

@@ -1,0 +1,5 @@
+<%= simple_form_for [@user, @request] do |f| %>
+<%= f.input :topic, label: "What would you like to discuss?", placeholder: "Freelance life, Ruby on Rails..." %>
+<%= f.collection_radio_buttons :start_time, [[Date.today, 'Today'], [Date.tomorrow, 'Tomorrow']] %>
+<%= f.submit " Submit ", :class => "btn btn-primary" %>
+<% end %>
