@@ -1,8 +1,28 @@
 // Specific CSS for your home-page
+@keyframes animatedBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: -100% 0; }
+}
+
+
 .home-wrapper {
-  background-color: $yak-green;
-  height: 60vh;
+  background-image: url('background.png');
+  background-repeat: repeat-x;
+  animation: animatedBackground 15s linear alternate infinite;
+  overflow: hidden;
+  height: 100vh;
   width: 100%;
+
+  .navbar-wagon {
+    background:rgba(0,0,0,0.2);
+  }
+
+  .inner-content {
+    padding: 30px;
+    margin-top: 90px;
+    color: black;
+  }
+
 
   h1 {
     color: $yak-white;
@@ -13,10 +33,10 @@
   }
 }
 
-.title {
-  margin-top: 90px;
-}
+// .title {
+//   margin-top: 90px;
+// }
 
-svg {
-  width: 100%;
-}
+// svg {
+//   width: 100%;
+// }

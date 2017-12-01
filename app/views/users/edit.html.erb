@@ -7,11 +7,9 @@
   <%= f.input :bio %>
   <%= f.association :skills, collection: Skill.all, as: :check_boxes, multiple: true %>
   <%= f.association :interests, collection: Interest.all, as: :check_boxes, multiple: true %>
-   <%#=  f.simple_fields_for :user_skills do |user_skill| %>
-      <%#= render 'user_skills_fields', f: user_skill %>
-    <%# end %>
   <%= f.submit %>
 <% end %>
 </div>
+
 
 
