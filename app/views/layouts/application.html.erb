@@ -10,8 +10,8 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
-  <body>
-    <%= render 'shared/navbar' %>
+  <body class="<%= params[:controller] %> <%= params[:action] %>">
+    <%= render 'shared/navbar' unless @disable_nav %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
