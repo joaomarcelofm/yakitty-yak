@@ -15,6 +15,7 @@ class RequestsController < ApplicationController
     @request.user = current_user
     users = Skill.skill_match(params[:request][:skill])
     @request.receiver = users.sample
+
     if @request.save
       redirect_to root_path
     else
@@ -29,9 +30,6 @@ class RequestsController < ApplicationController
     #figure out how to make notifications in slack
   end
 
-  def create_meeting
-
-  end
 
   def request_params
     params.require(:request).permit(:start_time, :topic, :skill)
