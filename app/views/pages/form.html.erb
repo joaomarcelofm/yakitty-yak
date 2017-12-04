@@ -3,86 +3,45 @@
   <div class="vertical-form">
     <span class="up-arrow-form"><%= image_tag "down-arrow.png", class: "up-arrow-image" %></span>
     <div class="step active step-1">
-
-      <div class="title">Hi there!</div>
-      <div class="content">Tell us about yourself <br> (don't worry, this won't take long)</div>
-
+      <div class="title">Hi there!
+      </div>
+      <div class="content">Tell us a little about yourself <br> (don't worry, this won't take long)
+      </div>
     </div>
-    <div class="step step-2 next">
-
+    <div class="step step-2 next text-center">
       <form action="/action_page.php" method="get">
-        What's your name? <input type="text" name="name"><br>
+        <div class="title">What's your name?<br>
+        </div>
+        <input type="text" name="name"><br>
       </form>
     </div>
-    <div class="step step-3 next">
-      <div class="title">Inspirational lorem</div>
-      <div class="content">..is more than just ipsum</div>
+    <div class="step step-3 next text-center">
+      <form action="/action_page.php" method="get">
+        <div class="title">Which part of the world are you in?
+        </div>
+        <input type="text" name="location"><br>
+      </form>
     </div>
-    <div class="step step-4 next">
-      <div class="title">Inspirational lorem</div>
-      <div class="content">..is more than just ipsum</div>
+    <div class="step step-4 next text-center">
+      <form action="/action_page.php" method="get">
+        <div class="title">And what do you do for work?
+        </div>
+        <input type="text" name="occupation"><br>
+      </form>
     </div>
-    <div class="step step-5">
-      <div class="title">It's done</div>
-      <div class="content">Have a fantastic day</div>
-    </div>
-    <i><%= image_tag "down-arrow.png", class: "down-arrow-form" %></i>
+    <div class="step step-5 text-center last">
+      <form action="/" method="get">
+        <div class="title">Cool, we're all done!
+        </div>
+        <button class="submit">Check
+        <span>you out!</span>
+        </button>
+      </form>
 
+    </div>
+    <i><%= image_tag "down-arrow.png", class: "down-arrow-form" %><i>
   </div>
 </div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-
 <script src="assets/form.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <form>
-  <input id="input-1" type="text" placeholder="John Doe" required autofocus />
-  <label for="input-1">
-    <span class="label-text">Full Name</span>
-    <span class="nav-dot"></span>
-    <div class="signup-button-trigger">Edit</div>
-  </label>
-  <input id="input-2" type="text" placeholder="Berlin" required />
-  <label for="input-2">
-    <span class="label-text">Location</span>
-    <span class="nav-dot"></span>
-  </label>
-  <input id="input-3" type="text" placeholder="Ruby Developer" required />
-  <label for="input-3">
-    <span class="label-text">Occupation</span>
-    <span class="nav-dot"></span>
-  </label>
-  <input id="input-4" type="text" placeholder="Tell us some interesting shit" required />
-  <label for="input-4">
-    <span class="label-text">Bio</span>
-    <span class="nav-dot"></span>
-  </label>
-  <input id="input-5" type="text" placeholder="dunno" required />
-  <label for="input-5">
-    <span class="label-text">Blah</span>
-    <span class="nav-dot"></span>
-  </label>
-  <button type="submit">Create your profile</button>
-  <p class="tip">Press Tab</p>
-  <div class="profile-button">Update</div>
-</form>
-
- -->
