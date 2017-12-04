@@ -35,6 +35,7 @@
   overflow: hidden;
 //   border-radius: 8px;
  }
+
 .vertical-form .step {
   position: absolute;
   top: 0;
@@ -47,8 +48,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  // color: white;
   font-family: Helvetica, sans-serif;
+
 }
 .vertical-form .step .title {
   font-size: 28px;
@@ -107,7 +109,7 @@
   }
 }
 
-.vertical-form i {
+.vertical-form i{
 
   position: absolute;
   bottom: 38px;
@@ -149,7 +151,7 @@
   text-align: center;
 }
 
-.down-arrow-form, .up-arrow-image {
+.up-arrow-image {
   height: 50px;
 
 }
@@ -160,5 +162,62 @@
   left: 50%;
   z-index: 3;
   transform: translateX(-50%);
+}
+
+.vertical-form input{
+  margin-top: 10px;
+  border-radius: 7px;
+}
+
+.down-arrow-form {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  // border-radius: 50%;
+  // padding: 8px;
+  // background-color: white;
+  // box-shadow: 0 1px 0 black;
+  height: 60px;
+  z-index: 3;
+}
+
+.vertical-form button{
+  margin-top: 30px;
+  border: 5px solid transparent;
+  background: $yak-yellow;
+  color: $yak-white;
+  border-radius: 10px;
+  padding: 15px 30px;
+  overflow: hidden;
+  width: 200px;
+  transition:
+    all        1.0s,
+    border     0.4s 1.0s,
+    box-shadow 0.3s 1.3s;
+  white-space: nowrap;
+  text-indent: 23px;
+  font-weight: bold;
+  span {
+    display: inline-block;
+    transform: translateX(300px);
+    font-weight: normal;
+    opacity: 0;
+    transition:
+      opacity 0.1s 0.4s,
+      transform 0.3s 0.4s;
+  }
+  &:hover {
+    text-indent: 0;
+    background: $yak-orange;
+    color: $yak-white;
+    width: 200px;
+    // border: 10px solid #8DCCC4;
+    box-shadow: 3px 3px 2px rgba(black, 0.15);
+    span {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
 

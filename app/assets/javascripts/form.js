@@ -17,11 +17,12 @@ $('i').on('click', function(){
     $('i').removeClass('animating');
 
     if(!$(this).next('.step').length){
-      $('i').html('check');
+      $('i').html('');
     }
     else {
       $(this).next('.step').addClass('next');
     }
+
 
   })
 
