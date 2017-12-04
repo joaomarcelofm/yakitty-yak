@@ -1,7 +1,7 @@
 .side-bar {
   background: $yak-yellow;
   color: $yak-white;
-  padding: 50px 10px;
+  padding: 0px 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   border-radius: 5px;
   top: 70px;
@@ -12,13 +12,28 @@
   }
 }
 
+.dash-links{
+  padding: 10px;
+  text-decoration: none;
+  color: $yak-white;
+  &:hover {
+    text-decoration: none;
+    color: $yak-green;
+  }
+}
+
+.side-bar-links{
+  margin-top: 40px;
+}
+
 .topic {
-  width: 200
+  width: 200px;
 }
 
 .meeting-search {
-  height: 200px;
+  height: 150px;
   padding: 15px;
+  z-index: 1;
   background: $yak-light-green;
   color: $yak-white;
   position: sticky !important;
@@ -42,15 +57,22 @@
   z-index: 1;
 }
 
-.chat-feed {
+.yak-feed {
   padding: 15px;
-  .avatar {
-    width: 50px;
-    border-radius: 20px;
-  }
+  background: $yak-white;
 }
 
-.product {
+.chat{
+  position: relative;
+}
+
+.chat-users .user-1{
+  position: absolute;
+  top: 0px;
+  left:5px;
+}
+
+.chat {
   display: flex;
   align-items: center;
   padding: 20px;
@@ -58,11 +80,29 @@
   transition: all 0.15s ease;
 }
 
-.product-upvote {
+.chat-box:first-child {
+  margin-top: 50px;
+}
+
+.chat-users {
   transition: all 0.15s ease;
   .avatar {
-    width: 70px;
-    border-radius: 20px;
+    width: 40px;
+    border-radius: 10px;
     margin-right: 10px;
   }
+}
+
+.feed-header{
+  position: sticky !important;
+  top: 220px;
+  z-index: 1;
+  background: $yak-white;
+  border-bottom: .5px solid rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+.side-bar .footer {
+  position: absolute;
+  bottom: 0px;
 }
