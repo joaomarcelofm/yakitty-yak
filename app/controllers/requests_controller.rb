@@ -13,8 +13,11 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.user = current_user
-    users = Skill.skill_match(params[:request][:skill])
-    @request.receiver = users.sample
+    if users = Skill.skill_match(params[:request][:skill])
+      @request.receiver = users.sample
+    else
+      render 'new'
+    end
     if @request.save
       redirect_to root_path
     else
