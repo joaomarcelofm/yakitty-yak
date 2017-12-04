@@ -13,7 +13,8 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.user = current_user
-    users = Skill.skill_match(params[:request][:skill])
+    skill = Skill.find(params[:request][:skill])
+    users = skill.users
     @request.receiver = users.sample
 
     if @request.save
@@ -21,6 +22,22 @@ class RequestsController < ApplicationController
     else
       render 'new'
     end
+
+  end
+
+  def accept # RequestsController#accept
+    #set the status to 2
+    request = Request.find(params[:id])
+    request.status = 2
+    request.save
+    Meeting.create(room_name: 'demo', request: request)
+  end
+
+  def reject
+    #set the status to 3
+    request = Request.find(params[:id])
+    request.status = 3
+    request.save
 
   end
 

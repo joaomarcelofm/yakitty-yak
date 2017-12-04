@@ -1,3 +1,5 @@
 class HooksController < ApplicationController
-  def request_callback
+  def push
+    byebug
   end
+end
