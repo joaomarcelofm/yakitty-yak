@@ -29,18 +29,80 @@
         <input type="text" name="occupation"><br>
       </form>
     </div>
-    <div class="step step-5 text-center last">
+    <div class="step step-5">
       <form action="/" method="get">
-        <div class="title">Cool, we're all done!
+        <div class="title">Pick your skills so we can create better matches for you!
         </div>
-        <button class="submit">Check
-        <span>you out!</span>
-        </button>
-      </form>
-
+        <div class="form-check form-check-inline">
+         <!--    <div class="skill card"> -->
+          <label class="form-check-label">
+            <%= image_tag "rails.png", class: "thumbnail"%>
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Rails
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+           <%= image_tag "ruby.png", class: "thumbnail" %>
+           <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Ruby
+         </label>
+       </div>
+       <div class="form-check form-check-inline">
+        <label class="form-check-label">
+         <%= image_tag "javascript.png", class: "thumbnail" %>
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Javascript
+       </label>
+     </div>
+     <div class="form-check form-check-inline">
+      <label class="form-check-label">
+       <%= image_tag "react.png", class: "thumbnail" %>
+       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> React
+     </label>
+   </div>
+   <br>
+   <div class="form-check form-check-inline">
+    <label class="form-check-label">
+     <%= image_tag "sass.png", class: "thumbnail" %>
+     <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Sass
+   </label>
+ </div>
+ <div class="form-check form-check-inline">
+  <label class="form-check-label">
+   <%= image_tag "python.png", class: "thumbnail" %>
+   <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Python
+ </label>
+</div>
+<div class="form-check form-check-inline">
+  <label class="form-check-label">
+    <%= image_tag "html5.png", class: "thumbnail" %>
+   <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> HTML5
+ </label>
+</div>
+<div class="form-check form-check-inline">
+  <label class="form-check-label">
+   <%= image_tag "python.png", class: "thumbnail" %>
+   <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Photoshop
+ </label>
+</div>
+</form>
+</div>
+<div class="step step-6 text-center">
+  <form action="/" method="get">
+    <div class="title">What interests you?
     </div>
-    <i><%= image_tag "down-arrow.png", class: "down-arrow-form" %><i>
-  </div>
+    <input type="text" name="occupation"><br>
+  </form>
+</div>
+<div class="step step-7 text-center last">
+  <form action="/" method="get">
+    <div class="title">Cool, we're all done!
+    </div>
+    <button class="submit">Check
+      <span>you out!</span>
+    </button>
+  </form>
+</div>
+<i><%= image_tag "down-arrow.png", class: "down-arrow-form" %><i>
+</div>
 </div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src="assets/form.js"></script>

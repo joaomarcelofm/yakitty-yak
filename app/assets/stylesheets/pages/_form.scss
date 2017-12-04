@@ -221,3 +221,36 @@
   }
 }
 
+.thumbnail {
+  height: 110px;
+  width: 95px;
+  margin-bottom: 10px;
+  margin: 20px;
+}
+
+.form-check-inline{
+  display: inline-block;
+  // margin-left: 20px;
+  align-items: center;
+}
+
+.form-check{
+  justify-content: left;
+}
+
+input[type="checkbox"]{
+  width: 15px; /*Desired width*/
+  height: 15px; /*Desired height*/
+  cursor: pointer;
+  // -webkit-appearance: none;
+  // appearance: none;
+}
+
+label.form-check-label {
+  font-size: 16px;
+}
+
+// .form .thumbnail {
+//   align-items: left;
+// }
+
