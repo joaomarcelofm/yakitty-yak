@@ -9,4 +9,8 @@ class PagesController < ApplicationController
     @disable_nav = true
     @request = Request.new
   end
+
+  def form
+    @disable_nav = true
+  end
 end

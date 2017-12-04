@@ -9,9 +9,9 @@
 
 .vertical-form-container {
   height: calc(100vh - 70px);
-  // width: 700px;
   position: relative;
-  cursor: url("https://image.ibb.co/nofzfk/cursor_smallest.png") 20 20, auto;
+  margin-top: 70px;
+  // cursor: url("https://image.ibb.co/nofzfk/cursor_smallest.png") 20 20, auto;
 
 // .vertical-form-container:after {
 //   content: ' ';
@@ -30,11 +30,18 @@
 .vertical-form {
   height: 100%;
   width: 100%;
-  background-color: #02A8F3;
+  background-color: $yak-white;
   position: relative;
   overflow: hidden;
 //   border-radius: 8px;
- }
+}
+
+.title {
+  h2 {
+    margin-top: 0px;
+    font-size: 30px;
+  }
+}
 
 .vertical-form .step {
   position: absolute;
@@ -49,7 +56,6 @@
   align-items: center;
   justify-content: center;
   // color: white;
-  font-family: Helvetica, sans-serif;
   color: $yak-white;
 
 }
@@ -61,12 +67,24 @@
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
 .vertical-form .step.step-2 {
-  background-color: #0285c0;
+  background-color: $yak-light-green;
 }
+
 .vertical-form .step.step-3 {
-  background-color: #01628e;
+  background-color: $yak-orange;
 }
+
+.vertical-form .step.step-4 {
+  background-color: $yak-light-purple;
+}
+
+.vertical-form .step.step-5 {
+  background-color: $yak-yellow;
+}
+
+
 .vertical-form .step.active {
   visibility: visible;
   transform: translateY(0);
@@ -111,7 +129,6 @@
 }
 
 .vertical-form i{
-
   position: absolute;
   bottom: 38px;
   left: 50%;
@@ -147,9 +164,7 @@
 }
 
 .content {
-  font-size: 20px;
-  justify-content: center;
-  text-align: center;
+
 }
 
 .up-arrow-image {
@@ -167,7 +182,28 @@
 
 .vertical-form input{
   margin-top: 10px;
-  border-radius: 7px;
+  border-radius: 10px;
+  padding: 10px;
+  color: $yak-black;
+  border-width: 0px;
+  width: 500px;
+}
+
+.bio-details {
+  height: 200px;
+}
+
+.dropdown-timezone {
+  height: 45px;
+  color: $yak-black;
+  border-width: 0px;
+  width: 500px;
+}
+
+#rounded {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px !important;
 }
 
 .down-arrow-form {
@@ -175,68 +211,68 @@
   bottom: -1px;
   left: 50%;
   transform: translateX(-50%);
-  // border-radius: 50%;
-  // padding: 8px;
-  // background-color: white;
-  // box-shadow: 0 1px 0 black;
   height: 60px;
   z-index: 3;
 }
 
 .vertical-form button{
-  margin-top: 30px;
-  border: 5px solid transparent;
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 24px;
+  border: 0px solid transparent;
   background: $yak-yellow;
   color: $yak-white;
   border-radius: 10px;
-  padding: 15px 30px;
+  padding: 10px 15px;
+  margin-top: 15px;
   overflow: hidden;
-  width: 200px;
-  transition:
-    all        1.0s,
-    border     0.4s 1.0s,
-    box-shadow 0.3s 1.3s;
-  white-space: nowrap;
-  text-indent: 23px;
-  font-weight: bold;
-  span {
-    display: inline-block;
-    transform: translateX(300px);
-    font-weight: normal;
-    opacity: 0;
-    transition:
-      opacity 0.1s 0.4s,
-      transform 0.3s 0.4s;
-  }
-  &:hover {
-    text-indent: 0;
-    background: $yak-orange;
-    color: $yak-white;
-    width: 200px;
-    // border: 10px solid #8DCCC4;
-    box-shadow: 3px 3px 2px rgba(black, 0.15);
-    span {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
+
+
+  // transition:
+  //   all        1.0s,
+  //   border     0.4s 1.0s,
+  //   box-shadow 0.3s 1.3s;
+  // white-space: nowrap;
+  // text-indent: 23px;
+  // font-weight: bold;
+  // span {
+  //   display: inline-block;
+  //   transform: translateX(300px);
+  //   font-weight: normal;
+  //   opacity: 0;
+  //   transition:
+  //     opacity 0.1s 0.4s,
+  //     transform 0.3s 0.4s;
+  // }
+  // &:hover {
+  //   text-indent: 0;
+  //   background: $yak-orange;
+  //   color: $yak-white;
+  //   width: 200px;
+  //   box-shadow: 3px 3px 2px rgba(black, 0.15);
+  //   span {
+  //     transform: translateX(0);
+  //     opacity: 1;
+  //   }
+  // }
 }
 
-.thumbnail {
-  height: 110px;
-  width: 95px;
-  margin-bottom: 10px;
-  margin: 20px;
+.form-thumbnail {
+  height: 80px;
+  margin: 0px 20px;
 }
+
+label.form-check-label {
+  font-weight: 400;
+}
+
 
 .form-check-inline{
   display: inline-block;
-  // margin-left: 20px;
-  align-items: center;
 }
 
-.form-check{
-  justify-content: left;
+.form-check {
+  margin-top: 20px;
 }
 
 input[type="checkbox"]{
@@ -251,7 +287,4 @@ label.form-check-label {
   font-size: 16px;
 }
 
-// .form .thumbnail {
-//   align-items: left;
-// }
 
