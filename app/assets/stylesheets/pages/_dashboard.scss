@@ -1,0 +1,68 @@
+.side-bar {
+  background: $yak-yellow;
+  color: $yak-white;
+  padding: 50px 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 5px;
+  top: 70px;
+  height: calc(100vh - 70px);
+  position: sticky !important;
+  h3 p {
+    padding: 10px;
+  }
+}
+
+.topic {
+  width: 200
+}
+
+.meeting-search {
+  height: 200px;
+  padding: 15px;
+  background: $yak-light-green;
+  color: $yak-white;
+  position: sticky !important;
+  top: 70px;
+  p {
+    font-size: 32px;
+  }
+}
+
+.row {
+  margin: 0;
+}
+
+.dash-feed {
+  padding: 0px;
+}
+
+.navbar-wagon{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.chat-feed {
+  padding: 15px;
+  .avatar {
+    width: 50px;
+    border-radius: 20px;
+  }
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.product-upvote {
+  transition: all 0.15s ease;
+  .avatar {
+    width: 70px;
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+}

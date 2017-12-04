@@ -1,0 +1,41 @@
+<%= render 'shared/navbar' %>
+<div class="dash-wrapper">
+  <div class="dash-container">
+    <div class="row">
+      <div class="side-bar col-md-3">
+        <h3>Hi, <%= current_user.name %>!</h3>
+        <a href="#">Chat History</a><br>
+        <a href="#">Support</a><br>
+        <a href="#">Invite buddies</a><br>
+      </div>
+
+      <div class="dash-feed col-md-9">
+        <div class="meeting-search">
+          <p>Don't be shy! Search for your new yak buddy now.</p>
+          <div class="form-inline" >
+            <%= render 'requests/new' %>
+          </div>
+        </div>
+        <div class="chat-feed">
+          <h2>Your Yaktivity</h2>
+          <% current_user.requests.each do |request| %>
+          <div class="product">
+            <div class='product-upvote'>
+              <%= image_tag current_user.image, class: 'avatar' %>
+            </div>
+            <div class='product-body'>
+              <h3><%= current_user.name %> & <%= request.receiver.name %></h3>
+              <p><%= request.topic %></p>
+            </div>
+            <ul class="list-inline product-controls hidden-sm hidden-xs">
+              <li><a href=""><i class="fa fa-heart"></i></a></li>
+              <li><a href=""><i class="fa fa-share"></i></a></li>
+              <li><a href=""><i class="fa fa-star"></i></a></li>
+            </ul>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
