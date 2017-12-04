@@ -10,7 +10,7 @@ class RequestsController < ApplicationController
     end
   end
 
-  def create_request
+  def create
     @request = Request.new(request_params)
     @request.user = current_user
     users = Skill.skill_match(params[:request][:skill])
