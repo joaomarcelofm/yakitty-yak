@@ -9,7 +9,7 @@
 
     <% if user_signed_in? %>
       <!-- Links when logged in -->
-
+      <%= link_to 'Dashboard', dashboard_path %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -33,13 +33,12 @@
           </ul>
         </div>
       </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
+    <%# else %>
+
       <%= link_to "About", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "How it works", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
-
 </div>
 
