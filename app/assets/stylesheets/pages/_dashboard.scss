@@ -27,12 +27,13 @@
 }
 
 .topic {
-  width: 200
+  width: 200px;
 }
 
 .meeting-search {
   height: 150px;
   padding: 15px;
+  z-index: 1;
   background: $yak-light-green;
   color: $yak-white;
   position: sticky !important;
@@ -61,11 +62,6 @@
   background: $yak-white;
 }
 
-.chat-users .avatar{
-  width:30px;
-  border-radius: 20px;
-}
-
 .chat{
   position: relative;
 }
@@ -91,8 +87,8 @@
 .chat-users {
   transition: all 0.15s ease;
   .avatar {
-    width: 70px;
-    border-radius: 20px;
+    width: 40px;
+    border-radius: 10px;
     margin-right: 10px;
   }
 }
@@ -100,6 +96,7 @@
 .feed-header{
   position: sticky !important;
   top: 220px;
+  z-index: 1;
   background: $yak-white;
   border-bottom: .5px solid rgba(0,0,0,0.2);
   padding: 10px;

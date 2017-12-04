@@ -2,7 +2,7 @@
 <div class="dash-wrapper">
   <div class="dash-container">
     <div class="row">
-      <div class="side-bar col-md-3 col-xs-12">
+      <div class="side-bar col-xs-12 col-md-3">
         <h3>Hi, <%= current_user.name %>!</h3>
         <ul class="list-unstyled side-bar-links">
           <li><%= link_to 'Calendar', dashboard_path, class: "dash-links" %></li>
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="dash-feed col-md-9">
+    <div class="dash-feed col-xs-12 col-md-9">
       <div class="meeting-search">
         <p>Don't be shy, search for your new yak buddy now!</p>
         <div class="form-inline" >
@@ -55,11 +55,6 @@
               <h3><%= current_user.name %> & <%= request.receiver.name %></h3>
               <p><%= request.topic %></p>
             </div>
-            <ul class="list-inline chat-controls hidden-sm hidden-xs">
-              <li><a href=""><i class="fa fa-heart"></i></a></li>
-              <li><a href=""><i class="fa fa-share"></i></a></li>
-              <li><a href=""><i class="fa fa-star"></i></a></li>
-            </ul>
           </div>
           <% end %>
         </div>
