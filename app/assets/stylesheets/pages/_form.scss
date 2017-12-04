@@ -186,7 +186,24 @@
   padding: 10px;
   color: $yak-black;
   border-width: 0px;
+  width: 500px;
+}
 
+.bio-details {
+  height: 200px;
+}
+
+.dropdown-timezone {
+  height: 45px;
+  color: $yak-black;
+  border-width: 0px;
+  width: 500px;
+}
+
+#rounded {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px !important;
 }
 
 .down-arrow-form {
