@@ -11,7 +11,7 @@
 
   .inner-content {
     padding: 30px;
-    margin-top: 80px;
+    margin-top: 75px;
     color: black;
   }
 
@@ -44,7 +44,7 @@
 svg {
   width: 100%;
   position: relative;
-  bottom: 0px;
+  bottom: -3px;
   z-index: 1;
   margin: 0px;
 }
@@ -65,6 +65,7 @@ svg {
     }
 }
 
-canvas #starfieldCanvas {
-  width: 100%;
+canvas {
+  width: 100vw;
+  height: 500px;
 }
