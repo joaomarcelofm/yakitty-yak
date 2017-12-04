@@ -12,8 +12,12 @@
   }
 }
 
+.topic {
+  width: 200
+}
+
 .meeting-search {
-  height: 100px;
+  height: 200px;
   padding: 15px;
   background: $yak-light-green;
   color: $yak-white;
@@ -32,11 +36,10 @@
   padding: 0px;
 }
 
-.dash-wrapper{
-  .navbar-wagon{
-    position: sticky !important;
-    top: 0px;
-  }
+.navbar-wagon{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .chat-feed {
