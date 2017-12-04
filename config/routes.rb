@@ -13,4 +13,8 @@ Rails.application.routes.draw do
 
   resources :meetings, only: [:new, :show]
 
+  scope '/hooks', :controller => :hooks do
+    post :request_callback
+  end
+
 end
