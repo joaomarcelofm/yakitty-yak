@@ -10,16 +10,20 @@
                 flightSpeed           = 0.02;              // speed of the flight, the higher this number the faster
 
                 /* ---- config end ---- */
+                // var numWidth = 1280.0;
+                // var numHeight = 500.0;
+
 
                 var canvas        = document.getElementById(starfieldCanvasId),
                 context       = canvas.getContext("2d"),
-                width         = canvas.width,
-                height        = canvas.height,
+                width         =  canvas.width,
+                height        =  canvas.height,
                 numberOfStars = width * height / 1000 * numberOfStarsModifier,
                 dirX          = width / 2,
                 dirY          = height / 2,
                 stars         = [],
                 TWO_PI        = Math.PI * 2;
+
 
             // initialize starfield
             for(var x = 0; x < numberOfStars; x++) {
@@ -85,5 +89,5 @@
             }
           };
         </script>
-        <canvas height="500" id="starfieldCanvas"></canvas>
+        <canvas width="2000" height="500" id="starfieldCanvas"></canvas>
       </div>
