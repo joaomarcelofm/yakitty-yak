@@ -43,13 +43,14 @@
   height: 100%;
   width: 100%;
   visibility: hidden;
-  background-color: #02A8F3;
+  background-color: $yak-purple;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   // color: white;
   font-family: Helvetica, sans-serif;
+  color: $yak-white;
 
 }
 .vertical-form .step .title {
