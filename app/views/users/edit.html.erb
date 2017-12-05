@@ -1,37 +1,101 @@
-<!-- <div class="form-container text-center">
-<h1>Tell us more about you!</h1>
-
+<div class="vertical-form-container">
+  <div class="vertical-form">
+    <span class="up-arrow-form"><%= image_tag "down-arrow.png", class: "up-arrow-image" %></span>
+    <div class="step active step-1">
+      <h1>Hi <%= current_user.name %>!</h1>
+      <div class="content text-center">
+        <p>Tell us a little about yourself<br>(don't worry, this won't take long)</p>
+      </div>
+    </div>
+    <div class="step step-2 next text-center">
+      <%= simple_form_for current_user do |f| %>
+      <!-- <form action="/users" method="get"> -->
+        <div class="title">
+          <h2>Which part of the world are you in?</h2>
+          <%= f.input :location %>
+        </div>
+        <!-- <input type="text" name="location"><br> -->
+    </div>
+    <div class="step step-3 next text-center">
+        <div class="title">
+          <h2>And what do you do for work?</h2>
+          <%= f.input :occupation %>
+        </div>
+        <!-- <input type="text" name="occupation"><br> -->
+    </div>
+    <div class="step step-4 text-center form-inline">
+        <div class="title">
+          <h2>What are some of your many skills?</h2>
+        </div>
+        <div class="form-check form-check-inline">
+          <!-- <label class="form-check-label"> -->
+            <%= image_tag "rails.png", class: "form-thumbnail"%>
+            <%=f.association :skills, class: "form-check-input", type: "checkbox", id:"inlineCheckbox1", value:"option1" %>
+          <!-- </label> -->
+        </div>
+        <div class="form-check form-check-inline">
+          <!-- <label class="form-check-label"> -->
+           <%= image_tag "java.png", class: "form-thumbnail" %>
+           <%=f.association :skills, class: "form-check-input", type: "checkbox", id: "inlineCheckbox2", value: "option2" %>
+          <!-- </label> -->
+       </div>
+       <div class="form-check form-check-inline">
+        <!-- <label class="form-check-label"> -->
+         <%= image_tag "javascript.png", class: "form-thumbnail" %>
+         <%= f.association :skills, class: "form-check-input", type: "checkbox", id: "inlineCheckbox3", value: "option3" %>
+       <!-- </label> -->
+     </div>
+     <div class="form-check form-check-inline">
+      <label class="form-check-label">
+       <%= image_tag "react.png", class: "form-thumbnail" %>
+       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> React
+     </label>
+   </div>
+   <br>
+   <div class="form-check form-check-inline">
+    <label class="form-check-label">
+     <%= image_tag "sass.png", class: "form-thumbnail" %>
+     <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Sass
+   </label>
+ </div>
+ <div class="form-check form-check-inline">
+  <label class="form-check-label">
+   <%= image_tag "python.png", class: "form-thumbnail" %>
+   <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Python
+ </label>
 </div>
- -->
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>Add your Typeform title here</title>
-  <style type="text/css">
-    html{
-      margin: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-    iframe{
-      position: absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      top:0;
-      border:0;
-    }
-  </style>
-</head>
-<body>
-  <iframe id="typeform-full"
-    width="100%"
-    height="100%"
-    frameborder="0"
-    src="https://tonipanacek.typeform.com/to/Jghr1O"></iframe>
-  <script type="text/javascript" src="https://embed.typeform.com/embed.js"></script>
-</body>
-</html>
-
-
-
+<div class="form-check form-check-inline">
+  <label class="form-check-label">
+    <%= image_tag "html5.png", class: "form-thumbnail" %>
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> HTML5
+  </label>
+</div>
+<div class="form-check form-check-inline">
+  <label class="form-check-label">
+   <%= image_tag "swift.png", class: "form-thumbnail" %>
+   <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Swift
+ </label>
+</div>
+</div>
+<div class="step step-5 text-center">
+    <div class="title">
+      <h2>How about a quick bio:</h2>
+      <%= f.input :bio %>
+    </div>
+    <!-- <textarea name="bio" class="bio-details" rows="10" cols="70"></textarea><br> -->
+</div>
+<div class="step step-7 text-center last">
+    <div class="title">
+      <h2>Cool, we're all done!</h2>
+      <%= f.submit %>
+    </div>
+   <!--  <button class="submit">
+      Get started!
+    </button>
+ -->  <% end %>
+</div>
+<i><%= image_tag "down-arrow.png", class: "down-arrow-form" %><i>
+</div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src="assets/javascripts/form.js"></script>
