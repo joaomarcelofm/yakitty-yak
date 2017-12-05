@@ -23,6 +23,7 @@ gem 'slack-ruby-client'
 gem 'eventmachine'
 gem 'faye-websocket'
 
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

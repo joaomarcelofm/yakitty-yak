@@ -1,108 +1,122 @@
-.side-bar {
+
+
+.dash-wrapper {
+  display: flex;
+  position: relative;
+}
+
+#side-bar {
+  height: calc(100vh - 70px);
+  flex: 0 0 270px;
   background: $yak-yellow;
   color: $yak-white;
-  padding: 0px 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  border-radius: 5px;
-  top: 70px;
-  height: calc(100vh - 70px);
-  position: sticky !important;
-  h3 p {
-    padding: 10px;
+  padding: 20px;
+  h1 {
+    font-size: 36px;
+    margin-top: 0px;
   }
-}
-
-.dash-links{
-  padding: 10px;
-  text-decoration: none;
-  color: $yak-white;
-  &:hover {
+  ul {
+    margin-top: 30px;
+  }
+  li {
+    margin-top: 10px;
+  }
+  a {
+    font-weight: 700;
+    color: $yak-white;
     text-decoration: none;
-    color: $yak-green;
+    padding: 3px 0px;
   }
 }
 
-.side-bar-links{
-  margin-top: 40px;
+
+#side-bar a:hover {
+  border-bottom: 3px solid $yak-white;
 }
 
 .topic {
   width: 200px;
 }
 
-.meeting-search {
-  height: 150px;
-  padding: 15px;
-  z-index: 1;
-  background: $yak-light-green;
-  color: $yak-white;
-  position: sticky !important;
-  top: 70px;
-  p {
-    font-size: 32px;
-  }
+.dash-container {
+  flex-direction: column;
+  width: 100%;
 }
 
-.row {
-  margin: 0;
+.meeting-search {
+  height: 150px;
+  padding: 20px 30px;
+  background: $yak-light-green;
+  color: $yak-white;
+  p {
+    font-size: 28px;
+  }
 }
 
 .dash-feed {
-  padding: 0px;
-}
-
-.navbar-wagon{
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-}
-
-.yak-feed {
-  padding: 15px;
-  background: $yak-white;
-}
-
-.chat{
   position: relative;
-}
 
-.chat-users .user-1{
-  position: absolute;
-  top: 0px;
-  left:5px;
-}
+  h2 {
+    font-size: 28px;
+    position: absolute;
+    background-color: $yak-white;
+    margin: 0;
+    padding: 30px;
+    width: 100%;
+    z-index: 1;
 
-.chat {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  border-radius: 3px;
-  transition: all 0.15s ease;
-}
-
-.chat-box:first-child {
-  margin-top: 50px;
-}
-
-.chat-users {
-  transition: all 0.15s ease;
-  .avatar {
-    width: 40px;
-    border-radius: 10px;
-    margin-right: 10px;
+    &:after {
+      content: "";
+      position: absolute;
+      background-color: #BFBFBF;
+      height: 1px;
+      width: calc(100% - 60px);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
 
-.feed-header{
-  position: sticky !important;
-  top: 220px;
-  z-index: 1;
-  background: $yak-white;
-  border-bottom: .5px solid rgba(0,0,0,0.2);
-  padding: 10px;
+.yak-feed {
+  padding: 95px 30px 0;
+  overflow: scroll;
+  height: calc(100vh - 220px)
 }
 
-.side-bar .footer {
+.yaktivity {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.15s ease;
+  position: relative;
+  background-color: #EDEDED;
+  margin: 15px 0px;
+}
+
+.yaktivity-users {
+  transition: all 0.15s ease;
+  width: 100px;
+  height: 75px;
+  .avatar {
+    width: 50px;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  .user-1{
   position: absolute;
-  bottom: 0px;
+  top: 15px;
+  left: 15px;
+  }
+  .user-2{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  }
+}
+
+#request_topic input {
+    border-radius: 10px 0 0 10px !important;
+    height: 50px;
 }
