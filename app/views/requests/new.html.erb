@@ -2,7 +2,9 @@
 
 <%= simple_form_for @request do |f| %>
   <%= f.input :topic, label: "What would you like to discuss?", placeholder: "Freelance life, Ruby on Rails..." %>
-  <%= f.input :skill, collection: @skills %>
-  <%= f.input :start_time, prompt: 'Skill',  as: :select, collection: [[Date.today, 'Today'], [Date.tomorrow, 'Tomorrow']] %>
+  <%= f.input :skill, label: "test", prompt: 'Skills', collection: @skills, selected:  %>
+
+  <%= f.input :skill, name: 'skill', :prompt => "skill", value: '', label: 'skill', required: false, collection: @skills, wrapper_html: { class: 'font-style' }, selected: @skills %>
+  <%= f.input :start_time,   as: :select, collection: [[Date.today, 'Today'], [Date.tomorrow, 'Tomorrow']] %>
   <%= f.submit " Submit ", :class => "btn btn-primary" %>
 <% end %>
