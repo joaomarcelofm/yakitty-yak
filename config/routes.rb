@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/form', to: 'pages#form'
   get '/meetings', to: "pages#meetings"
   get '/dashboard', to: "pages#dashboard"
+  get '/calendar', to: "pages#calendar"
 
   resources :meetings, only: [:new, :show]
 

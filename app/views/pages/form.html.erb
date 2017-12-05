@@ -1,105 +1,67 @@
-<div class="vertical-form-container">
-  <div class="vertical-form">
-    <span class="up-arrow-form"><%= image_tag "down-arrow.png", class: "up-arrow-image" %></span>
-    <div class="step active step-1">
-      <h1>Hi <%= current_user.name %>!</h1>
-      <div class="content text-center">
-        <p>Tell us a little about yourself<br>(don't worry, this won't take long)</p>
-      </div>
+<div id="progress"></div>
+
+<div class="center">
+  <div id="register">
+
+    <i id="progressButton" class="ion-android-arrow-forward next"></i>
+
+    <div id="inputContainer">
+      <input id="inputField" required autofocus />
+      <label id="inputLabel"></label>
+      <div id="inputProgress"></div>
     </div>
-    <div class="step step-2 next text-center">
-      <%= simple_form_for current_user do |f| %>
-      <!-- <form action="/users" method="get"> -->
-        <div class="title">
-          <h2>Which part of the world are you in?</h2>
-        </div>
-        <!-- <input type="text" name="location"><br> -->
-        .
-      </form>
-    </div>
-    <div class="step step-3 next text-center">
-        <div class="title">
-          <h2>And what do you do for work?</h2>
-        </div>
-        <input type="text" name="occupation"><br>
-      </form>
-    </div>
-    <div class="step step-4 text-center">
-      <form action="/" method="get">
-        <div class="title">
-          <h2>Which technologies are you more versed in?</h2>
-        </div>
-        <div class="form-check form-check-inline">
+
+  </div>
+</div>
+
+
+
+<div class="form-check form-check-inline">
+          <!-- <label class="form-check-label"> -->
+            <%= image_tag "rails.png", class: "form-thumbnail"%>
+            <%=f.association :skills, class: "form-check-input", type: "checkbox", id:"inlineCheckbox1", value:"option1" %>
+            <!-- </label> -->
+          </div>
+          <div class="form-check form-check-inline">
+            <!-- <label class="form-check-label"> -->
+             <%= image_tag "java.png", class: "form-thumbnail" %>
+             <%=f.association :skills, class: "form-check-input", type: "checkbox", id: "inlineCheckbox2", value: "option2" %>
+             <!-- </label> -->
+           </div>
+           <div class="form-check form-check-inline">
+            <!-- <label class="form-check-label"> -->
+             <%= image_tag "javascript.png", class: "form-thumbnail" %>
+             <%= f.association :skills, class: "form-check-input", type: "checkbox", id: "inlineCheckbox3", value: "option3" %>
+             <!-- </label> -->
+           </div>
+           <div class="form-check form-check-inline">
+            <label class="form-check-label">
+             <%= image_tag "react.png", class: "form-thumbnail" %>
+             <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> React
+           </label>
+         </div>
+         <br>
+         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <%= image_tag "rails.png", class: "form-thumbnail"%><br>
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Rails
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-           <%= image_tag "java.png", class: "form-thumbnail" %><br>
-           <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Java
+           <%= image_tag "sass.png", class: "form-thumbnail" %>
+           <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Sass
          </label>
        </div>
        <div class="form-check form-check-inline">
         <label class="form-check-label">
-         <%= image_tag "javascript.png", class: "form-thumbnail" %><br>
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Javascript
+         <%= image_tag "python.png", class: "form-thumbnail" %>
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Python
        </label>
      </div>
      <div class="form-check form-check-inline">
       <label class="form-check-label">
-       <%= image_tag "react.png", class: "form-thumbnail" %><br>
-       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> React
+        <%= image_tag "html5.png", class: "form-thumbnail" %>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> HTML5
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+       <%= image_tag "swift.png", class: "form-thumbnail" %>
+       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Swift
      </label>
    </div>
-   <br>
-   <div class="form-check form-check-inline">
-    <label class="form-check-label">
-     <%= image_tag "sass.png", class: "form-thumbnail" %><br>
-     <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Sass
-   </label>
- </div>
- <div class="form-check form-check-inline">
-  <label class="form-check-label">
-   <%= image_tag "python.png", class: "form-thumbnail" %><br>
-   <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Python
- </label>
-</div>
-<div class="form-check form-check-inline">
-  <label class="form-check-label">
-    <%= image_tag "html5.png", class: "form-thumbnail" %><br>
-    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> HTML5
-  </label>
-</div>
-<div class="form-check form-check-inline">
-  <label class="form-check-label">
-   <%= image_tag "swift.png", class: "form-thumbnail" %><br>
-   <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Swift
- </label>
-</div>
-</form>
-</div>
-<div class="step step-5 text-center">
-  <form action="/" method="get">
-    <div class="title">
-      <h2>Give us a short bio of yourself?</h2>
-    </div>
-    <textarea name="bio" class="bio-details" rows="4" cols="10"></textarea><br>
-  </form>
-</div>
-<div class="step step-7 text-center last">
-  <form action="/" method="get">
-    <div class="title">
-      <h2>Cool, we're all done!</h2>
-    </div>
-    <button class="submit">
-      Get started!
-    </button>
-  <% end %>
-</div>
-<i><%= image_tag "down-arrow.png", class: "down-arrow-form" %><i>
-</div>
-</div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-<script src="assets/form.js"></script>
