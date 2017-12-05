@@ -11,6 +11,5 @@ class PagesController < ApplicationController
   end
 
   def form
-    @disable_nav = true
   end
 end
