@@ -5,7 +5,7 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable,
   :omniauthable, :omniauth_providers => [:slack, :google_oauth2]
 
-  devise :omniauthable, :omniauth_providers => [:google_oauth2]
+  # devise :omniauthable, :omniauth_providers => [:google_oauth2]
 
   has_many :requests
   has_many :meetings, through: :requests
