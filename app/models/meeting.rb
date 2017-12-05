@@ -6,10 +6,10 @@ class Meeting < ApplicationRecord
   validates :room_name, presence: true
 
   def link
-    if Rails.env.development?
-      "https://localhost:3000/meetings/#{id}"
-    else
+    if Rails.env.production?
       "https://www.yakitty-yak.world/meetings/#{id}"
+    elsif Rails.env.development?
+      "http://localhost:3000/meetings/#{id}"
     end
   end
 

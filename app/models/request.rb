@@ -7,6 +7,7 @@ class Request < ApplicationRecord
   after_create :send_slack_request
   after_initialize :init
   after_update :create_meeting, if: :accepted?
+  after_update :send_slack_request , if: :rejected?
 
   enum status: [ :pending, :accepted, :rejected ]
 
@@ -26,12 +27,12 @@ class Request < ApplicationRecord
   def send_slack_request
     client = Slack::Web::Client.new
     message = {
-      text: "Hello #{receiver.name} :wave: :speech_balloon:!",
-      channel: receiver.uid,
+      text: "Hello #{receiver.name} :wave:!",
+      channel: "#webhooks",
       attachments: [
         {
-          title: "Chat Request from #{user.name}",
-          text: "Because 'TODO' is a skill of yours, they would like to discuss '#{topic}' with you.  \nThey have requested to meet at #{start_time.strftime("%a, %d %b")}.",
+          title: "Chat Request from #{user.name} :speech_balloon:",
+          text: "To discuss '#{topic}' with you. \nThey have requested to meet for #{start_time.strftime("%a, %d %b")}.",
           color: "#38B684",
           callback_id: "request",
           attachment_type: "default",
