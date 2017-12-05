@@ -4,10 +4,10 @@ class RequestsController < ApplicationController
     @request = Request.new
     @skills = Skill.pluck(:name) << "Nothing special"
 
-    respond_to do |format|
-      format.js
-      format.html { render :new  }
-    end
+    # respond_to do |format|
+    #   format.js
+    #   format.html { render :new  }
+    # end
   end
 
   def create

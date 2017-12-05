@@ -5,9 +5,15 @@ class Request < ApplicationRecord
   serialize :matches
 
   after_create :slack_request
+  after_initialize :init
+
 
   def set_reciever
     User.find()
+  end
+
+  def init
+    self.status = 1
   end
 
   # def create_meeting
@@ -25,8 +31,8 @@ class Request < ApplicationRecord
               {
                   fallback: "XYZ",
                   pretext: "Incoming from _Yakitty-Yak_ ",
-                  title: "Chat Request",
-                  text: "You have received a new request from #{user.name}. Because '#{skill}' is a skill of yours, they would like to discuss '#{Request.last.topic}' with you.  \nThey have requested to meet at #{start_time.strftime("%a, %d %b")}.",
+                  title: "Chat Request from #{user.name}",
+                  text: "Because '#{skill.name}' is a skill of yours, they would like to discuss '#{Request.last.topic}' with you.  \nThey have requested to meet at #{start_time.strftime("%a, %d %b")}.",
                   color: "#38B684",
                   actions: [
                   {
@@ -54,12 +60,13 @@ class Request < ApplicationRecord
         channel: '#webhooks',
         text: "Hello #{receiver.name} :wave: :speech_balloon:!",
         username: "Yakitty-Yak",
+        as_user: "false",
         attachments: [
               {
                   fallback: "XYZ",
                   # pretext: "Incoming from _Yakitty-Yak_ ",
-                  title: "Chat Request",
-                  text: "You have received a new request from #{user.name}. Because '#{skill}' is a skill of yours, they would like to discuss '#{Request.last.topic}' with you.  \nThey have requested to meet at #{Request.last.start_time.strftime("%a, %d %b")}.",
+                  title: "Chat Request from #{user.name}",
+                  text: "Because '#{skill}' is a skill of yours, they would like to discuss '#{Request.last.topic}' with you.  \nThey have requested to meet at #{Request.last.start_time.strftime("%a, %d %b")}.",
                   color: "#38B684",
                   actions: [
                   {
@@ -68,8 +75,8 @@ class Request < ApplicationRecord
                       "style": "primary",
                       "type": "button",
                       # "value": "http://29e197de.ngrok.io/requests/#{id}/accept"
-                      "value": id
-                      # "response_url": "http://29e197de.ngrok.io/requests/#{id}/accept"
+                      "value": id,
+                      "response_url": "http://29e197de.ngrok.io/requests/#{id}/accept"
                   },
                   {
                       "name": "reject",
