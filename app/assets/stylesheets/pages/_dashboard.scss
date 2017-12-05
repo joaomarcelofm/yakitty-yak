@@ -1,3 +1,5 @@
+
+
 .dash-wrapper {
   display: flex;
   position: relative;
@@ -8,8 +10,7 @@
   flex: 0 0 270px;
   background: $yak-yellow;
   color: $yak-white;
-  padding: 30px 20px;
-  position: relative;
+  padding: 20px;
   h1 {
     font-size: 36px;
     margin-top: 0px;
@@ -28,22 +29,6 @@
   }
 }
 
-.side-bar-social {
-  position: absolute;
-  bottom: 30px;
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  width: 230px;
-  padding: 0px 20px;
-  a:hover {
-  border-bottom: 0px solid $yak-white;
-  }
-  img {
-    height: 30px;
-  }
-}
-
 
 #side-bar a:hover {
   border-bottom: 3px solid $yak-white;
@@ -59,8 +44,8 @@
 }
 
 .meeting-search {
-  height: 170px;
-  padding: 30px;
+  height: 150px;
+  padding: 20px 30px;
   background: $yak-light-green;
   color: $yak-white;
   p {
@@ -69,66 +54,69 @@
 }
 
 .dash-feed {
+  position: relative;
+
   h2 {
     font-size: 28px;
-    margin: 0px
+    position: absolute;
+    background-color: $yak-white;
+    margin: 0;
+    padding: 30px;
+    width: 100%;
+    z-index: 1;
+
+    &:after {
+      content: "";
+      position: absolute;
+      background-color: #BFBFBF;
+      height: 1px;
+      width: calc(100% - 60px);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
-  padding: 30px;
 }
 
-hr {
-     color: $yak-gray;
-     background: $yak-white;
-     height: 1px;
+.yak-feed {
+  padding: 95px 30px 0;
+  overflow: scroll;
+  height: calc(100vh - 220px)
 }
 
+.yaktivity {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.15s ease;
+  position: relative;
+  background-color: #EDEDED;
+  margin: 15px 0px;
+}
 
-// .yak-feed {
-//   padding: 15px;
-//   background: $yak-white;
-// }
+.yaktivity-users {
+  transition: all 0.15s ease;
+  width: 100px;
+  height: 75px;
+  .avatar {
+    width: 50px;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  .user-1{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  }
+  .user-2{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  }
+}
 
-// .chat{
-//   position: relative;
-// }
-
-// .chat-users .user-1{
-//   position: absolute;
-//   top: 0px;
-//   left:5px;
-// }
-
-// .chat {
-//   display: flex;
-//   align-items: center;
-//   padding: 20px;
-//   border-radius: 3px;
-//   transition: all 0.15s ease;
-// }
-
-// .chat-box:first-child {
-//   margin-top: 50px;
-// }
-
-// .chat-users {
-//   transition: all 0.15s ease;
-//   .avatar {
-//     width: 40px;
-//     border-radius: 10px;
-//     margin-right: 10px;
-//   }
-// }
-
-// .feed-header{
-//   position: sticky !important;
-//   top: 220px;
-//   z-index: 1;
-//   background: $yak-white;
-//   border-bottom: .5px solid rgba(0,0,0,0.2);
-//   padding: 10px;
-// }
-
-// .side-bar .footer {
-//   position: absolute;
-//   bottom: 0px;
-// }
+#request_topic input {
+    border-radius: 10px 0 0 10px !important;
+    height: 50px;
+}
