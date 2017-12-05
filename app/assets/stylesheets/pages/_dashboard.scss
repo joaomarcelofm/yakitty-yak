@@ -1,5 +1,3 @@
-
-
 .dash-wrapper {
   display: flex;
   position: relative;
@@ -76,6 +74,20 @@
       transform: translateX(-50%);
     }
   }
+}
+
+
+.pages.dashboard .navbar-wagon{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+}
+
+hr {
+     color: $yak-gray;
+     background: $yak-white;
+     height: 1px;
 }
 
 .yak-feed {

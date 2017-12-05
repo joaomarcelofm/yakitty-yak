@@ -32,7 +32,6 @@ var activeStep = $('.step.active');
 var isOne = activeStep.hasClass('step-1');
 // console.log(isOne);
 if(isOne === true){
-  // console.log("WAI");
   $(".up-arrow-form").addClass("hidden");
 } else {
   $(".up-arrow-form").removeClass('hidden');
@@ -40,9 +39,7 @@ if(isOne === true){
 };
 
 if(isOne === false){
-  // console.log("WAI");
   $(".up-arrow-form").removeClass("hidden");}
-   console.log("WAI");
   // $('.up-arrow-form').on('click', function(){
   //   $(this).addClass('animating');
   //   var activeStep = $('.step.active');
