@@ -157,11 +157,16 @@
 #request_start_time  {
   height: 50px;
   color: $yak-light-green;
-  background-color: $yak-white;
+  background-color:rgba(0, 0, 0, 0);
   border: none;
   width: 150px;
   -webkit-box-shadow: none;
-  -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
 }
+
+.request_start_time {
+  background-color: $yak-white;
+  border-radius: 0px 10px 10px 0px;
+}
+
 
