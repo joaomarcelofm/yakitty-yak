@@ -1,0 +1,28 @@
+.meeting-wrapper {
+  margin-top: 30px;
+
+}
+
+.video-asset {
+  position: relative;
+  padding: 0px;
+  height: 585px;
+}
+
+#remoteParticipant {
+
+  video {
+  width: 100%;
+  }
+}
+
+#videoPreview {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  video {
+  height: 100px;
+  }
+}
+

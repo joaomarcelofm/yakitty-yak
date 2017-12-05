@@ -1,0 +1,7 @@
+
+<%= simple_form_for @request do |f| %>
+  <%= f.input :topic, label: false, placeholder: "What would you like to yak about?", class: "topic" %>
+  <%= f.input :skill, label: false, collection: Skill.all %>
+  <%= f.collection_radio_buttons :start_time, [[Date.today, 'Today'], [Date.tomorrow, 'Tomorrow']], :first, :last %>
+  <%= f.submit " Submit ", :class => "btn btn-primary" %>
+<% end %>

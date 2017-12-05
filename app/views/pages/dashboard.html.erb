@@ -1,0 +1,36 @@
+<%= render 'shared/navbar' %>
+<div class="dash-wrapper">
+  <div class="dash-container">
+    <div class="row">
+      <%= render 'dash_side_bar' %>
+
+    <div class="dash-feed col-xs-12 col-md-9">
+      <div class="meeting-search">
+        <p>Don't be shy, search for your new yak buddy now!</p>
+        <div class="form-inline" >
+          <%= render 'requests/new' %>
+        </div>
+      </div>
+      <div class="feed-header">
+        <h2>Your Yaktivity</h2>
+      </div>
+      <div class="yak-feed">
+        <div class="chat-box">
+          <% current_user.requests.each do |request| %>
+          <div class="chat">
+            <div class='chat-users'>
+              <%= image_tag current_user.image, class: "avatar user-1" %>
+              <%= image_tag request.receiver.image, class: "avatar user-2" %>
+            </div>
+            <div class='chat-body'>
+              <h3><%= current_user.name %> & <%= request.receiver.name %></h3>
+              <p><%= request.topic %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

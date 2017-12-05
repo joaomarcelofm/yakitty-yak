@@ -1,23 +1,68 @@
-<div class="home-wrapper text-center">
-  <%= render 'shared/navbar' %>
-  <div class="container">
+<div class="home-wrapper">
+  <div class="home-banner text-center">
+    <%= render 'shared/navbar' %>
+    <%= render "shared/home-background" %>
     <div class="inner-content">
-    <div class="title">
-      <h1>Lets Yakitty-Yak</h1>
-      <h2>Chatting with work friends has never been this <strong>fun</strong>!</h2>
+      <div class="title">
+        <h1> Easy connection & collaboration<br>with your network </h1>
+      </div>
+      <% if current_user %>
+        <div class="empty-space"></div>
+      <% else %>
+        <%= link_to user_slack_omniauth_authorize_path do %>
+        <img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" />
+        <% end %>
+      <% end %>
     </div>
-    <%= link_to user_slack_omniauth_authorize_path do %>
-    <img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" />
-    <% end %>
-    <a href="https://slack.com/oauth/authorize?scope=incoming-webhook&client_id=278333923347.278335215347"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
-    <%#= link_to 'Add Yakitty-Yak to Slack', "https://slack.com/oauth/authorize?scope=identity.basic,identity.avatar&client_id=278333923347.278335215347", class: "btn btn-primary" %>
-    <%# if current_user %>
-    <%#= link_to 'Edit your Profile!', edit_user_path(current_user), class: "btn btn-info" %>
-    <%# end %>
+    <svg height="140" viewBox="0 0 2369 169" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <title>Exclude</title>
+      <desc>Created using Figma</desc>
+      <g id="Canvas" transform="translate(8261 -2235)">
+        <g id="Exclude">
+          <use xlink:href="#path0_fill" transform="translate(-8261 2235.65)" fill="#FCFCFC"/>
+        </g>
+      </g>
+      <defs>
+        <path id="path0_fill" d="M 0 0.26001L 0 168.355L 2369 168.355L 2369 0C 2110.79 67.2278 1676.37 111.355 1184 111.355C 692.262 111.355 258.334 67.3416 0 0.26001Z"/>
+      </defs>
+    </svg>
+
+  </div>
+  <div class="product-details">
+    <div class="container">
+      <h2 class="text-center">Building meaningful connections<br>can be a lot of fun </h2>
+      <div class="row">
+        <div class="detail-block">
+          <div class="detail-content col-md-8">
+            <div class="detail-title">
+              <h3 style="text-decoration: underline; text-decoration-color: #E22172">Get matched and get talking</h3>
+            </div>
+            <div class="detail-description">
+              <p>Connect with people who have complementary skill-sets – clear up a doubt, help out, or brainstorm</p>
+            </div>
+          </div>
+          <div class="detail-image  col-md-4">
+            <%= image_tag "match.png", class: 'pull-right' %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="detail-block">
+          <div class="detail-image  col-md-4">
+            <%= image_tag "chat.png" %>
+          </div>
+          <div class="detail-content col-md-8">
+            <div class="detail-title text-right">
+              <h3>No more awkward introductions.</h3>
+              <h3 style="text-decoration: underline; text-decoration-color: #7FD0DF; margin-top: 0px">Yakitty-Yak makes it exciting!</h3>
+            </div>
+            <div class="detail-description text-right">
+              <p>Want to skip past the work-talk and just get to know someone new? Get matched with a random person in your network and depend on our conversation cues to keep it interesting!</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<!-- <svg width="500" height="100" viewBox="0 0 500 80" preserveAspectRatio="none">
-  <path d="M0,0 L0,40 Q250,80 500,40 L500,0 Z" fill="#1A535C" />
-</svg>
- -->
+<%= render 'shared/footer' %>

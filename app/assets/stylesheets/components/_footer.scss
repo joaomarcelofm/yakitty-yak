@@ -1,0 +1,33 @@
+.footer {
+  background: $yak-yellow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0px 50px;
+  margin-top: 50px;
+  color: $yak-white;
+  h3 {
+    font-size: 18px;
+    margin: 0px
+  }
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  img {
+    fill: $yak-black;
+    height: 30px;
+  }
+}
+.footer-links a {
+  color: $yak-white;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  img {
+    fill: $yak-light-green;
+  }
+}

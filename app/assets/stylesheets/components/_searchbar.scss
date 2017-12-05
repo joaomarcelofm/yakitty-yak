@@ -1,0 +1,28 @@
+.search  {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  height: 20px;
+}
+
+.search .form-group.search_name {
+  width: 60%;
+}
+
+.search .form-inline .form-control {
+  width: 100%;
+}
+
+body.items.index input#search_name {
+  width: 100%;
+}
+
+body.pages.home input#search_name {
+  width: 100%;
+}
+
+select#search_category {
+  width: 200px;
+}
+
