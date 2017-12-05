@@ -10,8 +10,6 @@
 .vertical-form-container {
   height: calc(100vh - 70px);
   position: relative;
-  margin-top: 70px;
-  // cursor: url("https://image.ibb.co/nofzfk/cursor_smallest.png") 20 20, auto;
 
 // .vertical-form-container:after {
 //   content: ' ';
@@ -99,7 +97,7 @@
 }
 .vertical-form .step.next {
   visibility: visible;
-  transform: translateY(calc(100% - 67px)) scaleX(1.3333);
+  transform: translateY(calc(100% - 55px)) scaleX(1.3333);
   // border-radius: 50%;
   z-index: 2;
 }
@@ -119,7 +117,7 @@
 }
 @keyframes slidingIn {
   from {
-    transform: translateY(calc(100% - 67px)) scaleX(1.3333);
+    transform: translateY(calc(100% - 55px)) scaleX(1.3333);
     border-radius: 70%;
   }
   to {
@@ -189,9 +187,9 @@
   width: 500px;
 }
 
-.bio-details {
-  height: 200px;
-}
+// .bio-details {
+//   height: 200px;
+// }
 
 .dropdown-timezone {
   height: 45px;

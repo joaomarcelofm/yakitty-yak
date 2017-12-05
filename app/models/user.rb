@@ -50,4 +50,13 @@ class User < ApplicationRecord
     return user
   end
 
+  def first_name
+    name_array = name.split
+    return name_array[0]
+  end
+
+  def last_name
+    name_array = name.split
+    return name_array[-1]
+  end
 end
