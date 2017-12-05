@@ -1,19 +1,18 @@
 <%= render 'shared/navbar' %>
 <div class="dash-wrapper">
+  <div id="side-bar">
+    <%= render 'dash_side_bar' %>
+  </div>
   <div class="dash-container">
-    <div class="row">
-      <%= render 'dash_side_bar' %>
-
-    <div class="dash-feed col-xs-12 col-md-9">
-      <div class="meeting-search">
-        <p>Don't be shy, search for your new yak buddy now!</p>
-        <div class="form-inline" >
-          <%= render 'requests/new' %>
-        </div>
+    <div class="meeting-search">
+      <p>Don't be shy, search for your new yak buddy now!</p>
+      <div class="form-inline" >
+        <%= render 'requests/new' %>
       </div>
-      <div class="feed-header">
-        <h2>Your Yaktivity</h2>
-      </div>
+    </div>
+    <div class="dash-feed">
+      <h2>Your Yaktivity</h2>
+      <hr/>
       <div class="yak-feed">
         <div class="chat-box">
           <% current_user.requests.each do |request| %>
@@ -33,4 +32,4 @@
     </div>
   </div>
 </div>
-</div>
+
