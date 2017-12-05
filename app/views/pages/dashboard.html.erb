@@ -14,16 +14,16 @@
       <div class="dash-feed">
         <h2>Your Yaktivity</h2>
         <div class="yak-feed">
-          <% current_user.requests.reverse_each do |request| %>
+          <% current_user.meetings.reverse_each do |meeting| %>
           <div class="yaktivity">
             <div class='yaktivity-users'>
-              <%= image_tag current_user.image, class: "avatar user-1" %>
-              <%= image_tag request.receiver.image, class: "avatar user-2" %>
+              <%= image_tag meeting.request.user.image, class: "avatar user-1" %>
+              <%= image_tag meeting.request.receiver.image, class: "avatar user-2" %>
             </div>
             <div class='yaktivity-title'>
-              <h3><%= current_user.first_name %> and <%= request.receiver.first_name %></h3>
+              <h3><%= meeting.request.user.first_name %> and <%= meeting.request.receiver.first_name %></h3>
               <div class="yaktivity-details">
-                <p><%= request.topic %></p>
+                <p><%= meeting.request.topic %> -- status: <%= meeting.request.status %></p>
               </div>
             </div>
           </div>
