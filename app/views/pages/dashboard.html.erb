@@ -2,18 +2,7 @@
 <div class="dash-wrapper">
   <div class="dash-container">
     <div class="row">
-      <div class="side-bar col-xs-12 col-md-3">
-        <h3>Hi, <%= current_user.name %>!</h3>
-        <ul class="list-unstyled side-bar-links">
-          <li><%= link_to 'Calendar', dashboard_path, class: "dash-links" %></li>
-          <li><%= link_to 'Team Chat History', dashboard_path, class: "dash-links" %></li>
-          <li><%= link_to 'Support', dashboard_path, class: "dash-links" %></li>
-          <li><%= link_to 'Invite Buddies', dashboard_path, class: "dash-links" %></li>
-        </ul>
-        <div class="footer text-center">
-          <ul class="list-inline"></ul>
-      </div>
-    </div>
+      <%= render 'dash_side_bar' %>
 
     <div class="dash-feed col-xs-12 col-md-9">
       <div class="meeting-search">
