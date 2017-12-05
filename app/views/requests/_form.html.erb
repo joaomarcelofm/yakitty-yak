@@ -2,5 +2,5 @@
   <%= f.input :topic, label: false, placeholder: "What would you like to yak about?" %>
   <%= f.input :skill, label: false, prompt: 'Skills', collection: skills  %>
   <%= f.input :start_time, label: false, prompt: 'When', as: :select, collection: [['Today', Date.today], ['Tomorrow', Date.tomorrow]] %>
-  <%= f.submit "Find a Yak buddy", :class => "btn btn-primary" %>
+  <%= f.submit "Find a Yak buddy", :class => "negative-button" %>
 <% end %>
