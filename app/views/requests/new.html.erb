@@ -1,8 +1,8 @@
 
 
 <%= simple_form_for @request do |f| %>
-  <%= f.input :topic, label: "What would you like to discuss?", placeholder: "Freelance life, Ruby on Rails...", class: "request-topic" %>
-  <%= f.input :skill, collection: @skills, class: "request-skill" %>
-  <%= f.collection_radio_buttons :start_time, [[Date.today, 'Today'], [Date.tomorrow, 'Tomorrow']], :first, :last, class: "request-time" %>
+  <%= f.input :topic, label: "What would you like to discuss?", placeholder: "Freelance life, Ruby on Rails..." %>
+  <%= f.input :skill, collection: @skills %>
+  <%= f.input :start_time, prompt: 'Skill',  as: :select, collection: [[Date.today, 'Today'], [Date.tomorrow, 'Tomorrow']] %>
   <%= f.submit " Submit ", :class => "btn btn-primary" %>
 <% end %>
