@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   def dashboard
     @disable_nav = true
     @request = Request.new
+    @skills = Skill.all
   end
 
   def form
