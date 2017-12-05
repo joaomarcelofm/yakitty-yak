@@ -38,11 +38,6 @@ class RequestsController < ApplicationController
 
   private
 
-  def notification_webhook
-    #figure out how to make notifications in slack
-  end
-
-
   def request_params
     params.require(:request).permit(:start_time, :topic, :skill)
   end
