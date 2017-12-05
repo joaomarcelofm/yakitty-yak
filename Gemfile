@@ -17,6 +17,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'omniauth-slack'
+gem "omniauth-google-oauth2"
 gem 'twilio-ruby', '~> 5.5.0'
 gem 'slack-ruby-client'
 gem 'eventmachine'
