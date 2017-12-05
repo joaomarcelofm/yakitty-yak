@@ -21,27 +21,22 @@ class RequestsController < ApplicationController
   end
 
   def accept # RequestsController#accept
-    #set the status to 2
+    #set the status to 1
     request = Request.find(params[:id])
-    request.status = 2
+    request.status = 1
     request.save
     Meeting.create(room_name: 'demo', request: request)
   end
 
   def reject
-    #set the status to 3
+    #set the status to 2
     request = Request.find(params[:id])
-    request.status = 3
+    request.status = 2
     request.save
 
   end
 
   private
-
-  def notification_webhook
-    #figure out how to make notifications in slack
-  end
-
 
   def request_params
     params.require(:request).permit(:start_time, :topic, :skill)
