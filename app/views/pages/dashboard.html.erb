@@ -8,7 +8,7 @@
       <div class="meeting-search">
         <p>Don't be shy, search for your new yak buddy now!</p>
         <div class="form-inline" >
-          <%= render 'requests/new' %>
+          <%= render 'requests/form', request: @request, skills: @skills %>
         </div>
       </div>
       <div class="dash-feed">
