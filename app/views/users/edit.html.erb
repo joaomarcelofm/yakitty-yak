@@ -26,23 +26,23 @@
       <div class="step step-4 text-center">
         <div class="title">
           <h2>What are some of your many skills?</h2>
-            <% f.association :skills, collection: @skills do |skill|%>
-            <%= skill.name %>
-            <% end %>
         </div>
- </div>
- <div class="step step-5 text-center">
-  <div class="title">
-    <h2>How about a quick bio:</h2>
-    <%= f.input :bio %>
-  </div>
-  <!-- <textarea name="bio" class="bio-details" rows="10" cols="70"></textarea><br> -->
-</div>
-<div class="step step-7 text-center last">
-  <div class="title">
-    <h2>Cool, we're all done!</h2>
-    <%= f.submit %>
-  </div>
+        <div class="image-skills">
+          <%= f.association :skills, collection: Skill.all, as: :check_boxes, multiple: true, label_html: { class: "skill-icons"}, label_method: lambda { |s| image_tag("#{s.name.downcase}.png").html_safe }  %>
+        </div>
+      </div>
+      <div class="step step-5 text-center">
+        <div class="title">
+          <h2>How about a quick bio:</h2>
+          <%= f.input :bio %>
+        </div>
+        <!-- <textarea name="bio" class="bio-details" rows="10" cols="70"></textarea><br> -->
+      </div>
+      <div class="step step-7 text-center last">
+        <div class="title">
+          <h2>Cool, we're all done!</h2>
+          <%= f.submit %>
+        </div>
    <!--  <button class="submit">
       Get started!
     </button>
