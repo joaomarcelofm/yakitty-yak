@@ -110,4 +110,13 @@ class User < ApplicationRecord
     return name_array[-1]
   end
 
+  def meeting_list
+    meetings = Meeting.all
+    user_meetings = []
+    meetings.each do |meeting|
+      user_meetings << meeting if meeting.request.user == self
+      user_meetings << meeting if meeting.request.receiver == self
+    end
+    user_meetings.sort_by!(&:created_at).reverse!
+  end
 end

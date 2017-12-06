@@ -4,6 +4,10 @@
   <%= f.input :occupation %>
   <%= f.input :bio %>
   <%= f.association :skills, collection: Skill.all, as: :check_boxes, multiple: true %>
+  <%= f.association :skills, as: :check_boxes %>
   <%= f.association :interests, collection: Interest.all, as: :check_boxes, multiple: true %>
   <%= f.submit %>
 <% end %>
+
+
+

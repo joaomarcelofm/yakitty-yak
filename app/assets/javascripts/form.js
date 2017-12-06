@@ -1,3 +1,4 @@
+
 $('i').on('click', function(){
 
   if($(this).text() == 'check'){
@@ -28,6 +29,12 @@ $('i').on('click', function(){
 
 })
 
+progressButton.addEventListener('click', validate)
+inputField.addEventListener('keyup', function(e){
+  transform(0, 0) // ie hack to redraw
+  if(e.keyCode == 13) validate()
+  })
+
 var activeStep = $('.step.active');
 var isOne = activeStep.hasClass('step-1');
 // console.log(isOne);
@@ -37,6 +44,9 @@ if(isOne === true){
   $(".up-arrow-form").removeClass('hidden');
   $(".up-arrow-form").addClass('next')
 };
+
+
+
 
 if(isOne === false){
   $(".up-arrow-form").removeClass("hidden");}
@@ -60,3 +70,12 @@ if(isOne === false){
       // }
 // };
 // };
+
+
+
+// $(document).ready(function(e){
+//     $(".img-check").click(function(){
+//       console.log("hello");
+//     $(this).toggleClass("check");
+//   });
+// });

@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     end
 
     @user.update(params_user)
-    redirect_to @user
+    redirect_to dashboard_path
   end
 
   private
