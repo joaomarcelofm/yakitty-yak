@@ -14,7 +14,7 @@
       <div class="dash-feed">
         <h2>Your Yaktivity</h2>
         <div class="yak-feed">
-          <% current_user.meetings.reverse_each do |meeting| %>
+          <% current_user.meeting_list.each do |meeting| %>
           <div class="yaktivity">
             <div class='yaktivity-users'>
               <%= image_tag meeting.request.user.image, class: "avatar user-1" %>
@@ -23,7 +23,7 @@
             <div class='yaktivity-title'>
               <h3><%= meeting.request.user.first_name %> and <%= meeting.request.receiver.first_name %></h3>
               <div class="yaktivity-details">
-                <p><%= meeting.request.topic %> -- status: <%= meeting.request.status %></p>
+                <p><%= meeting.request.topic %></p>
               </div>
             </div>
           </div>
