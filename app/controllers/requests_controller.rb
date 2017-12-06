@@ -20,18 +20,18 @@ class RequestsController < ApplicationController
 
   end
 
-  def accept # RequestsController#accept
+  def accepted # RequestsController#accept
     #set the status to 1
     request = Request.find(params[:id])
-    request.status = 1
+    request.status = :accepted
     request.save
     Meeting.create(room_name: 'demo', request: request)
   end
 
-  def reject
+  def rejected
     #set the status to 2
     request = Request.find(params[:id])
-    request.status = 2
+    request.status = :rejected
     request.save
 
   end
