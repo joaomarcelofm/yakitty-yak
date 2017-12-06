@@ -11,7 +11,7 @@
             <h1>Your are yakking with <%= @meeting.request.receiver.first_name %></h1>
             <p><%= @meeting.request.receiver.bio %></p>
           <% else %>
-            <h1>Your are yakking with <%= @meeting.request.use.first_name %></h1>
+            <h1>Your are yakking with <%= @meeting.request.user.first_name %></h1>
             <p><%= @meeting.request.user.bio %></p>
           <% end %>
           <div class="details-icons">
