@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205112953) do
+ActiveRecord::Schema.define(version: 20171206103041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20171205112953) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "user_id"
     t.integer "receiver_id"
     t.text "matches"
@@ -50,7 +50,8 @@ ActiveRecord::Schema.define(version: 20171205112953) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "topic"
-    t.string "skill"
+    t.bigint "skill_id"
+    t.index ["skill_id"], name: "index_requests_on_skill_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
@@ -133,6 +134,7 @@ ActiveRecord::Schema.define(version: 20171205112953) do
   end
 
   add_foreign_key "meetings", "requests"
+  add_foreign_key "requests", "skills"
   add_foreign_key "requests", "users"
   add_foreign_key "rooms", "users"
   add_foreign_key "user_interests", "interests"
