@@ -7,7 +7,7 @@
           <div id="videoPreview"></div>
         </div>
         <div class="user-info col-md-4">
-          <% if current_user == meeting.request.user %>
+          <% if current_user == @meeting.request.user %>
             <h1>Your are yakking with <%= @meeting.request.receiver.first_name %></h1>
             <p><%= @meeting.request.receiver.bio %></p>
           <% else %>
