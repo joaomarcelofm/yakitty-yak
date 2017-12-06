@@ -19,16 +19,33 @@
           <th class="text-center">link</th>
         </tr>
 
+
         <% current_user.events.each do |event| %>
         <tr>
+
           <td><%= event.name %></td>
           <td><%= event.start %></td>
           <td><%= event.creator %></td>
           <td><%= event.calendar %></td>
+          <td><%= event.description %></td>
+          <td><%= calendar.description %></td>
           <td><%= link_to "#{event.name.first(10)}...", event.link %></td>
         </tr>
+
         <% end %>
 
       </table>
+    </div>
   </div>
+
 </div>
+
+<!-- {
+  "kind": "calendar#calendar",
+  "etag": etag,
+  "id": string,
+  "summary": string,
+  "description": string,
+  "location": string,
+  "timeZone": string
+} -->
