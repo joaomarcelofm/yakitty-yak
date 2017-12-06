@@ -7,8 +7,8 @@
     <div class="dash-container">
       <div class="meeting-search">
         <p>Don't be shy, search for your new yak buddy now!</p>
-        <div class="form-inline" >
-          <%= render 'requests/new' %>
+        <div class="form-inline">
+          <%= render 'requests/form', request: @request, skills: @skills %>
         </div>
       </div>
       <div class="dash-feed">
@@ -20,7 +20,7 @@
               <%= image_tag meeting.request.user.image, class: "avatar user-1" %>
               <%= image_tag meeting.request.receiver.image, class: "avatar user-2" %>
             </div>
-            <div class='chat-body'>
+            <div class='yaktivity-title'>
               <h3><%= meeting.request.user.first_name %> and <%= meeting.request.receiver.first_name %></h3>
               <div class="yaktivity-details">
                 <p><%= meeting.request.topic %> -- status: <%= meeting.request.status %></p>

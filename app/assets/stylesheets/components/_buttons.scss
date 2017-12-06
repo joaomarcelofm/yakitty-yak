@@ -1,0 +1,30 @@
+.negative-button {
+  height: 50px;
+  background-color: $yak-white;
+  border-radius: 10px;
+  font-family: Raleway;
+  font-weight: 700;
+  color: $yak-light-green;
+  border: none;
+  margin-left: 15px;
+  padding: 0px 15px;
+}
+
+.negative-button:hover{
+  color: $yak-green;
+}
+
+.reject-button {
+  background-color: $yak-orange;
+  border-radius: 10px;
+  font-family: Raleway;
+  font-weight: 700;
+  color: $yak-white;
+  border: none;
+  padding: 15px 15px;
+}
+
+.reject-button:hover {
+  text-decoration: none;
+  color: $yak-white;
+}

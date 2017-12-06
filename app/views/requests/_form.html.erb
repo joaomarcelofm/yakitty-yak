@@ -1,0 +1,6 @@
+<%= simple_form_for request do |f| %>
+  <%= f.input :topic, label: false, placeholder: "What would you like to yak about?" %>
+  <%= f.association :skill, label: false, prompt: 'Skills', collection: skills  %>
+  <%= f.input :start_time, label: false, prompt: 'When', as: :select, collection: [['Today', Date.today], ['Tomorrow', Date.tomorrow]] %>
+  <%= f.submit "Find a Yak buddy", :class => "negative-button" %>
+<% end %>

@@ -1,12 +1,13 @@
 class Request < ApplicationRecord
   belongs_to :user
+  belongs_to :skill
   belongs_to :receiver, class_name: "User"
   has_one :meeting
   serialize :matches
 
   after_create :send_slack_request
-  after_initialize :init
   after_update :create_meeting, if: :accepted?
+  after_update :reassign_receiver, if: :rejected?
 
   enum status: [ :pending, :accepted, :rejected ]
 
@@ -15,23 +16,31 @@ class Request < ApplicationRecord
     User.find()
   end
 
-  def init
-    self.status = 0
-  end
-
   def create_meeting
     Meeting.create(room_name: 'demo', request: self)
+  end
+
+  def reassign_receiver
+    # get the skill
+    # get all users that share that skill
+    users = skill.users
+    # minus the previous
+    candidates = users.reject { |u| u == receiver || u == user }
+    candidate = candidates.sample
+    # create a new request
+    request = Request.new(skill: skill, user: user, receiver: candidate, topic: topic, start_time: start_time)
+    request.save
   end
 
   def send_slack_request
     client = Slack::Web::Client.new
     message = {
-      text: "Hello #{receiver.name} :wave: :speech_balloon:!",
+      text: "Hello #{receiver.name} :wave:!",
       channel: receiver.uid,
       attachments: [
         {
-          title: "Chat Request from #{user.name}",
-          text: "Because 'TODO' is a skill of yours, they would like to discuss '#{topic}' with you.  \nThey have requested to meet at #{start_time.strftime("%a, %d %b")}.",
+          title: "Chat Request from #{user.name} :speech_balloon:",
+          text: "To discuss '#{topic}' with you. \nThey have requested to meet on #{start_time.strftime("%a, %d %b")}.",
           color: "#38B684",
           callback_id: "request",
           attachment_type: "default",
@@ -51,11 +60,22 @@ class Request < ApplicationRecord
                 "value": "#{id}"
             }
           ]
+        }
+      ]
+    }
+    client.chat_postMessage message
 
+    message = {
+      text: "Hello #{user.name} :wave:!",
+      channel: user.uid,
+      attachments: [
+        {
+          title: "Chat request submitted to your network! :speech_balloon:",
+          text: "When your request is accepted you will recieve a notification \n Have an awesome day! :yakitty-avatar:",
+          color: "#38B684",
         }
       ]
     }
     client.chat_postMessage message
   end
 end
-

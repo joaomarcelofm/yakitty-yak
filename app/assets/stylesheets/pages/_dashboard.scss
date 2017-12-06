@@ -9,6 +9,7 @@
   background: $yak-yellow;
   color: $yak-white;
   padding: 20px;
+  margin-top: 70px;
   h1 {
     font-size: 36px;
     margin-top: 0px;
@@ -42,10 +43,11 @@
 }
 
 .meeting-search {
-  height: 150px;
+  height: 160px;
   padding: 20px 30px;
   background: $yak-light-green;
   color: $yak-white;
+  margin-top: 70px;
   p {
     font-size: 28px;
   }
@@ -93,8 +95,7 @@ hr {
 .yak-feed {
   padding: 95px 30px 0;
   overflow: scroll;
-  height: calc(100vh - 220px)
-
+  height: calc(100vh - 230px);
 }
 
 .yaktivity {
@@ -129,7 +130,60 @@ hr {
   }
 }
 
-#request_topic input {
-    border-radius: 10px 0 0 10px !important;
-    height: 50px;
+.yaktivity-title {
+  h3 {
+    font-family: 'Raleway';
+    font-weight: 700;
+    margin-top: 0px;
+  }
 }
+
+.yaktivity-details {
+  p {
+    margin: 0px;
+  }
+}
+
+
+// form styling
+
+#request_topic {
+  border-radius: 10px 0 0 10px;
+  height: 50px;
+  border: none;
+  width: 600px;
+  color: $yak-light-green;
+  -webkit-box-shadow: none;
+    ::placeholder {
+    color: $yak-light-green;
+  }
+}
+
+.request_skill {
+  background-color: $yak-white;
+}
+
+#request_skill_id  {
+  height: 50px;
+  color: $yak-light-green;
+  background-color: $yak-white;
+  border: none;
+  width: 150px;
+  -webkit-box-shadow: none;
+}
+
+#request_start_time  {
+  height: 50px;
+  background-color:rgba(0, 0, 0, 0);
+  color: $yak-light-green;
+  border: none;
+  width: 150px;
+  -webkit-box-shadow: none;
+}
+
+.request_start_time {
+  background-color: $yak-white;
+  border-radius: 0px 10px 10px 0px;
+}
+
+
