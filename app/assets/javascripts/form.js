@@ -1,16 +1,14 @@
-
 $('i').on('click', function(){
-
   if($(this).text() == 'check'){
     return false;
   }
-
   $(this).addClass('animating');
 
   var activeStep = $('.step.active');
   activeStep.addClass('sliding-out');
   var nextStep = activeStep.next('.step');
   nextStep.addClass('sliding-in');
+
   nextStep.on('animationend', function(){
     $(this).off('animationend');
     activeStep.removeClass('active sliding-out').addClass('previous');
@@ -19,15 +17,11 @@ $('i').on('click', function(){
 
     if(!$(this).next('.step').length){
       $('i').html('');
-    }
-    else {
+    } else {
       $(this).next('.step').addClass('next');
-    }
-
-
-  })
-
-})
+    };
+  });
+});
 
 $('input[type=text], input[type=checkbox]').on('keydown', function(e) {
   if (e.which == 13) {
@@ -54,8 +48,6 @@ $('input[type=text], input[type=checkbox]').on('keydown', function(e) {
   }
 });
 
-
-
 var activeStep = $('.step.active');
 var isOne = activeStep.hasClass('step-1');
 // console.log(isOne);
@@ -65,8 +57,6 @@ if(isOne === true){
   $(".up-arrow-form").removeClass('hidden');
   $(".up-arrow-form").addClass('next')
 };
-
-
 
 
 if(isOne === false){

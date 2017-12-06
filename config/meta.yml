@@ -1,0 +1,5 @@
+meta_product_name: "Yakitty-Yak"
+meta_title: "Yakitty-Yak - Activate Your Network"
+meta_description: "Easy connection & collaboration with your network via Slack"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@ya_kitty_yak"   # required for Twitter Cards
