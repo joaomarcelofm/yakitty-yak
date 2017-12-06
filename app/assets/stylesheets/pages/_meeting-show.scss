@@ -1,7 +1,12 @@
 .meeting-wrapper {
   margin-top: 30px;
-
 }
+
+.video-detail-box {
+  margin-bottom: 30px;
+}
+
+// video
 
 .video-asset {
   position: relative;
@@ -13,16 +18,38 @@
 
   video {
   width: 100%;
+  border-radius: 10px;
   }
 }
 
 #videoPreview {
   position: absolute;
   bottom: 20px;
-  right: 20px;
+  right: 25px;
 
   video {
-  height: 100px;
+  height: 130px;
+  border-radius: 10px;
+  border: 5px solid $yak-white;
   }
 }
 
+// User details
+
+.user-info {
+  padding-left: 40px;
+  h1 {
+    font-size: 36px;
+    margin-top: 0px;
+  }
+}
+
+.details-icons {
+  color: $yak-light-green;
+  border-bottom: 1px solid $yak-gray;
+  padding-bottom: 12.5px;
+}
+
+.details-icebreaker {
+  margin-top: 12.5px;
+}
