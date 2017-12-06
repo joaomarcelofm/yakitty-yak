@@ -3,7 +3,7 @@
 }
 
 .video-detail-box {
-  margin-bottom: 30px;
+  margin-bottom: 45px;
 }
 
 // video
@@ -50,6 +50,17 @@
   padding-bottom: 12.5px;
 }
 
-.details-icebreaker {
-  margin-top: 12.5px;
+.details-topics {
+  h2 {
+    font-size: 20px;
+    margin-top: 12.5px;
+    padding-bottom: 12.5px;
+    border-bottom: 1px solid $yak-gray;
+  }
+
+  h3 {
+    font-family: 'Raleway';
+    font-size: 18px;
+    font-weight: 700;
+  }
 }

@@ -50,13 +50,13 @@ class Meeting < ApplicationRecord
   def random_topic
     icebreaker = [ "🌽 If you were a vegetable, what vegetable would you be?",
       "🦁 If you woke up tomorrow as an animal, what animal would you choose to be and why?",
-      "🌍 If you could live anywhere on this planet and take everything that you love with you, where would you choose to live? Tell the group about your choice.",
+      "🌍 If you could live anywhere on this planet and take everything that you love with you, where would you choose to live? Explain your choice.",
       "🌈 What favorite color are you and how does being that color make you feel?",
       "👻 If you could choose an imaginary friend, who would you choose and why?",
       "👯 If you could sit on a bench in a beautiful woods, who would you like sitting next to you on the bench and why?",
       "🌜 Are you sunrise, daylight, twilight, or night? Please share why you picked your time of day?",
       "📽 If you could be in the movie of your choice, what movie would you choose and what character would you play?"]
 
-      icebreaker.sample(3)
+      icebreaker.sample(1)
     end
   end
