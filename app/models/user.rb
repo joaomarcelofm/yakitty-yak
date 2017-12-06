@@ -1,7 +1,11 @@
+require "open-uri"
+
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:slack]
+  :recoverable, :rememberable, :trackable, :validatable,
+  :omniauthable, :omniauth_providers => [:slack, :google_oauth2]
+
+  # devise :omniauthable, :omniauth_providers => [:google_oauth2]
 
   has_many :requests
   has_many :meetings, through: :requests
@@ -13,8 +17,10 @@ class User < ApplicationRecord
 
   has_many :user_interests
   has_many :interests, through: :user_interests
+  has_many :events
 
   # accepts_nested_attributes_for :skills
+
 
 
   def self.from_omniauth(auth)
@@ -50,6 +56,52 @@ class User < ApplicationRecord
     return user
   end
 
+  def self.find_for_google_oauth2(oauth, signed_in_resource=nil)
+    credentials = oauth.credentials
+    data = oauth.info
+    user = User.where(email: data["email"]).first
+    user.get_google_calendars  # Wait for next section
+    user
+  end
+
+  def call_api(url)
+    response = open(url)
+    JSON.parse(response.read)
+  end
+
+  def get_google_calendars
+    url = "https://www.googleapis.com/calendar/v3/users/me/calendarList?access_token=#{token}"
+    response = open(url)
+    json = JSON.parse(response.read)
+    calendars = json["items"]
+    calendars.each { |cal| get_events_for_calendar(cal) }
+  end
+
+  def get_events_for_calendar(cal)
+
+    url = "https://www.googleapis.com/calendar/v3/calendars/#{cal["id"]}/events?access_token=#{token}"
+    response = open(url)
+    json = JSON.parse(response.read)
+    my_events = json["items"]
+
+    my_events.each do |event|
+      name = event["summary"] || "no name"
+      creator = event["creator"] ? event["creator"]["email"] : nil
+      start = event["start"] ? event["start"]["dateTime"] : nil
+      status = event["status"] || nil
+      link = event["htmlLink"] || nil
+      calendar = cal["summary"] || nil
+
+      events.create(name: name,
+        creator: creator,
+        status: status,
+        start: start,
+        link: link,
+        calendar: calendar
+        )
+    end
+  end
+
   def first_name
     name_array = name.split
     return name_array[0]
@@ -59,4 +111,5 @@ class User < ApplicationRecord
     name_array = name.split
     return name_array[-1]
   end
+
 end
