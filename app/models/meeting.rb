@@ -26,7 +26,7 @@ class Meeting < ApplicationRecord
         {
           title: "Get ready to start your meeting with #{request.receiver.name}",
           text: "Here is your meeting link: #{link} \n Have a great time! :yakitty-avatar:",
-          color: "#38B684"
+          color: "#7FD0DF"
           }
         ]
     )
@@ -41,7 +41,7 @@ class Meeting < ApplicationRecord
         {
           title: "Get ready to start your meeting with #{request.user.name}",
           text: "Here is your meeting link: #{link} \n Thanks for being an awesome community member!:yakitty-avatar:",
-          color: "#38B684"
+          color: "#7FD0DF"
           }
         ]
     )
