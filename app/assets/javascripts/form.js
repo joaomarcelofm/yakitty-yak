@@ -29,11 +29,32 @@ $('i').on('click', function(){
 
 })
 
-progressButton.addEventListener('click', validate)
-inputField.addEventListener('keyup', function(e){
-  transform(0, 0) // ie hack to redraw
-  if(e.keyCode == 13) validate()
-  })
+$('input[type=text], input[type=checkbox]').on('keydown', function(e) {
+  if (e.which == 13) {
+    e.preventDefault();
+    $(this).addClass('animating');
+
+    var activeStep = $('.step.active');
+    activeStep.addClass('sliding-out');
+    var nextStep = activeStep.next('.step');
+    nextStep.addClass('sliding-in');
+
+    nextStep.on('animationend', function(){
+      $(this).off('animationend');
+      activeStep.removeClass('active sliding-out').addClass('previous');
+      $(this).removeClass('next sliding-in').addClass('active');
+      $('i').removeClass('animating');
+
+      if(!$(this).next('.step').length){
+        $('i').html('');
+      } else {
+        $(this).next('.step').addClass('next');
+      };
+    })
+  }
+});
+
+
 
 var activeStep = $('.step.active');
 var isOne = activeStep.hasClass('step-1');
