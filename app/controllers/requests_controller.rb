@@ -8,9 +8,11 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.user = current_user
-    skill = Skill.find(params[:request][:skill])
+    skill = Skill.find(params[:request][:skill_id])
     users = skill.users
-    @request.receiver = users.sample
+    candidates = users.reject { |u| u == current_user }
+    @request.skill = skill
+    @request.receiver = candidates.sample
 
     if @request.save
       redirect_to root_path
@@ -39,6 +41,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:start_time, :topic, :skill)
+    params.require(:request).permit(:start_time, :topic, :skill_id)
   end
 end
