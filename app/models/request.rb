@@ -1,13 +1,13 @@
 class Request < ApplicationRecord
   belongs_to :user
+  belongs_to :skill
   belongs_to :receiver, class_name: "User"
   has_one :meeting
   serialize :matches
 
   after_create :send_slack_request
-  after_initialize :init
   after_update :create_meeting, if: :accepted?
-  after_update :send_slack_request, if: :rejected?
+  after_update :reassign_receiver, if: :rejected?
 
   enum status: [ :pending, :accepted, :rejected ]
 
@@ -16,12 +16,20 @@ class Request < ApplicationRecord
     User.find()
   end
 
-  def init
-    self.status = 0
-  end
-
   def create_meeting
     Meeting.create(room_name: 'demo', request: self)
+  end
+
+  def reassign_receiver
+    # get the skill
+    # get all users that share that skill
+    users = skill.users
+    # minus the previous
+    candidates = users.reject { |u| u == receiver || u == user }
+    candidate = candidates.sample
+    # create a new request
+    request = Request.new(skill: skill, user: user, receiver: candidate, topic: topic, start_time: start_time)
+    request.save
   end
 
   def send_slack_request
