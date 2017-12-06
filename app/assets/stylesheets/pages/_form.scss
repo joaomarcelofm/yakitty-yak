@@ -1,7 +1,30 @@
+input{
+  text-align:center;
+}
+
+.user_skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.checkbox input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.check{
+  opacity:0.5;
+  color: $yak-pink;
+}
+
+.icons {
+  width: 100px;
+}
+
 .pages.form body {
   margin: 0;
   background: #25A3FF;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open-Sans', sans-serif;
 }
 
 .pages.form h1 {

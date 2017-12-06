@@ -1,55 +1,48 @@
 <div class="vertical-form-container">
   <div class="vertical-form">
-    <span class="up-arrow-form"><%= image_tag "down-arrow.png", class: "up-arrow-image" %></span>
+    <!-- <span class="up-arrow-form"><%= image_tag "down-arrow.png", class: "up-arrow-image" %></span> -->
     <div class="step active step-1">
-      <h1>Hi <%= current_user.name %>!</h1>
+      <h1>Hi <%= current_user.first_name %>!</h1>
       <div class="content text-center">
         <p>Tell us a little about yourself<br>(don't worry, this won't take long)</p>
       </div>
     </div>
     <div class="step step-2 next text-center">
       <%= simple_form_for current_user do |f| %>
-      <!-- <form action="/users" method="get"> -->
-        <div class="title">
-          <h2>Which part of the world are you in?</h2>
-          <%= f.input :location %>
-        </div>
-        <!-- <input type="text" name="location"><br> -->
+      <div class="title">
+        <h2>Which part of the world are you in?</h2>
+        <%= f.input :location, label: false %>
       </div>
-      <div class="step step-3 next text-center">
-        <div class="title">
-          <h2>And what do you do for work?</h2>
-          <%= f.input :occupation %>
-        </div>
-        <!-- <input type="text" name="occupation"><br> -->
+    </div>
+    <div class="step step-3 next text-center">
+      <div class="title">
+        <h2>And what do you do for work?</h2>
+        <%= f.input :occupation, label: false %>
       </div>
-      <div class="step step-4 text-center">
-        <div class="title">
-          <h2>What are some of your many skills?</h2>
-        </div>
-        <div class="image-skills">
-          <%= f.association :skills, collection: Skill.all, as: :check_boxes, multiple: true, label_html: { class: "skill-icons"}, label_method: lambda { |s| image_tag("#{s.name.downcase}.png").html_safe }  %>
-        </div>
+    </div>
+    <div class="step step-4 text-center">
+      <div class="title">
+        <h2>What are some of your many skills?</h2>
       </div>
-      <div class="step step-5 text-center">
-        <div class="title">
-          <h2>How about a quick bio:</h2>
-          <%= f.input :bio %>
-        </div>
-        <!-- <textarea name="bio" class="bio-details" rows="10" cols="70"></textarea><br> -->
+      <div class="image-skills">
+        <%= f.association :skills, collection: Skill.all, as: :check_boxes, multiple: true, label: false, include_hidden: false, label_method: lambda { |s| image_tag("#{s.name.downcase}.png", class: "icons img-check" ).html_safe } %>
       </div>
-      <div class="step step-7 text-center last">
-        <div class="title">
-          <h2>Cool, we're all done!</h2>
-          <%= f.submit %>
-        </div>
-   <!--  <button class="submit">
-      Get started!
-    </button>
-  -->  <% end %>
-</div>
-<i><%= image_tag "down-arrow.png", class: "down-arrow-form" %><i>
-</div>
-</div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-<script src="assets/javascripts/form.js"></script>
+    </div>
+    <div class="step step-5 text-center">
+      <div class="title">
+        <h2>How about a quick bio:</h2>
+        <%= f.input :bio, label: false %>
+      </div>
+    </div>
+    <div class="step step-7 text-center last">
+      <div class="title">
+        <h2>Cool, we're all done!</h2>
+        <%= f.submit%>
+      </div>
+      <% end %>
+    </div>
+    <i><%= image_tag "down-arrow.png", class: "down-arrow-form", id: "progressButton" %><i>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script src="assets/javascripts/form.js"></script>
