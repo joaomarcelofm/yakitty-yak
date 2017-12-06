@@ -7,8 +7,13 @@
           <div id="videoPreview"></div>
         </div>
         <div class="user-info col-md-4">
-          <h1>Your are yakking with <%= @meeting.request.receiver.first_name %></h1>
-          <p><%= @meeting.request.receiver.bio %></p>
+          <% if current_user == meeting.request.user %>
+            <h1>Your are yakking with <%= @meeting.request.receiver.first_name %></h1>
+            <p><%= @meeting.request.receiver.bio %></p>
+          <% else %>
+            <h1>Your are yakking with <%= @meeting.request.use.first_name %></h1>
+            <p><%= @meeting.request.user.bio %></p>
+          <% end %>
           <div class="details-icons">
             <div class="row">
               <span class="col-md-4"><i class="fa fa-map-marker"></i> <%= @meeting.request.receiver.location %></span>
