@@ -148,11 +148,15 @@ hr {
 // form styling
 
 #request_topic {
-    border-radius: 10px 0 0 10px;
-    height: 50px;
-    border: none;
-    width: 600px;
+  border-radius: 10px 0 0 10px;
+  height: 50px;
+  border: none;
+  width: 600px;
+  color: $yak-light-green;
+  -webkit-box-shadow: none;
+    ::placeholder {
     color: $yak-light-green;
+  }
 }
 
 .request_skill {
@@ -175,30 +179,6 @@ hr {
   border: none;
   width: 150px;
   -webkit-box-shadow: none;
-}
-
-.request_start_time {
-  background-color: $yak-white;
-  border-radius: 0px 10px 10px 0px;
-}
-
-#request_skill  {
-  height: 50px;
-  color: $yak-light-green;
-  background-color: $yak-white;
-  border: none;
-  width: 150px;
-  -webkit-box-shadow: none;
-}
-
-#request_start_time  {
-  height: 50px;
-  color: $yak-light-green;
-  background-color:rgba(0, 0, 0, 0);
-  border: none;
-  width: 150px;
-  -webkit-box-shadow: none;
-  -moz-border-radius: 10px;
 }
 
 .request_start_time {
