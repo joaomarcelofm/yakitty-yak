@@ -73,8 +73,9 @@ if(isOne === false){
 
 
 
-$(document).ready(function(e){
-    $(".img-check").click(function(){
-    $(this).toggleClass("check");
-  });
-});
+// $(document).ready(function(e){
+//     $(".img-check").click(function(){
+//       console.log("hello");
+//     $(this).toggleClass("check");
+//   });
+// });
