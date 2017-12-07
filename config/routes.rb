@@ -15,11 +15,10 @@ Rails.application.routes.draw do
 
   post '/webhooks', to: 'hooks#push'
 
-  get '/form', to: 'pages#form'
   get '/meetings', to: "pages#meetings"
   get '/dashboard', to: "pages#dashboard"
   get '/calendar', to: "pages#calendar"
-  get '/profile', to: "pages#profile"
+  get '/team-yaks', to: "pages#team_yaks"
 
   resources :meetings, only: [:new, :show]
 

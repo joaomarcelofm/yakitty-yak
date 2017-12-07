@@ -11,6 +11,9 @@ class PagesController < ApplicationController
     @skills = Skill.all
   end
 
-  def form
+  def team_yaks
+    @disable_nav = true
+    @request = Request.new
+    @skills = Skill.all
   end
 end

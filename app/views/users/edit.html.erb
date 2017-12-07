@@ -1,6 +1,6 @@
 <div class="vertical-form-container">
   <div class="vertical-form">
-    <span class="up-arrow-form"><%= image_tag "down-arrow.png", class: "up-arrow-image" %></span>
+    <!-- # <span class="up-arrow-form"><= image_tag "down-arrow.png", class: "up-arrow-image" %></span> -->
     <div class="step active step-1">
       <h1>Hi <%= current_user.first_name %>!</h1>
       <div class="content text-center">
@@ -17,7 +17,7 @@
     <div class="step step-3 next text-center">
       <div class="title">
         <h2>And what do you do for work?</h2>
-        <%= f.input :occupation, label: false %>
+        <%= f.input :occupation, label: false, class: "form-line-field" %>
       </div>
     </div>
     <div class="step step-4 text-center">
@@ -31,13 +31,14 @@
     <div class="step step-5 text-center">
       <div class="title">
         <h2>How about a quick bio:</h2>
-        <%= f.input :bio, label: false %>
+        <%= f.input :bio, label: false, class: "form-line-field", id: "#rounded" %>
       </div>
     </div>
     <div class="step step-7 text-center last">
       <div class="title">
         <h2>Cool, we're all done!</h2>
-        <%= f.submit "Let's get started"%>
+        <%= f.hidden_field :onboarded, value: true %>
+        <%= f.submit "Let's get started", class: "success-button" %>
       </div>
       <% end %>
     </div>
@@ -46,8 +47,3 @@
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
   <script src="assets/javascripts/form.js"></script>
-  <script>
-  $('.img-check').on('click', function () {
-    $(this).toggleClass('check')
-  })
-</script>

@@ -12,9 +12,12 @@
   display: none;
 }
 
-.check {
-  border-radius: 50%;
-  border: 5px solid $yak-yellow;
+input[type="text"]{
+
+}
+
+.onboard-btn {
+  width: 100px;
 }
 
 .checkbox:first-child {
@@ -57,28 +60,14 @@
 .vertical-form-container {
   height: calc(100vh - 70px);
   position: relative;
-
-// .vertical-form-container:after {
-//   content: ' ';
-//   position: absolute;
-//   top: calc(100% + 5px);
-//   left: 0;
-//   display: inline-block;
-//   height: 30px;
-//   width: 100%;
-//   background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-//   filter: blur(10px);
-//   z-index: 1;
-// }
 }
+
 .vertical-form {
   height: 100%;
   width: 100%;
   background-color: $yak-white;
   position: relative;
   overflow: hidden;
-//   border-radius: 8px;
 }
 
 .title {
@@ -100,14 +89,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // color: white;
   color: $yak-white;
-
 }
+
 .vertical-form .step .title {
   font-size: 28px;
   margin-bottom: 16px;
 }
+
 .vertical-form .step > * {
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -208,13 +197,8 @@
   }
 }
 
-.content {
-
-}
-
 .up-arrow-image {
   height: 50px;
-
 }
 
 .up-arrow-form{
@@ -225,24 +209,19 @@
   transform: translateX(-50%);
 }
 
-.vertical-form input{
-  margin-top: 10px;
+.vertical-form input {
   border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: none;
+}
+
+.form-line-field input{
+  margin-top: 10px;
   padding: 10px;
   color: $yak-black;
   border-width: 0px;
   width: 500px;
-}
-
-// .bio-details {
-//   height: 200px;
-// }
-
-.dropdown-timezone {
-  height: 45px;
-  color: $yak-black;
-  border-width: 0px;
-  width: 500px;
+  height: 50px;
 }
 
 #rounded {
@@ -336,3 +315,9 @@ label.form-check-label {
   color: $yak-black;
 }
 
+.user_skills > .checkbox > label {
+  input:checked + img {
+    border: $yak-yellow solid 5px;
+    border-radius: 50%;
+  }
+}
