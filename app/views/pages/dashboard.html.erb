@@ -16,11 +16,11 @@
 
         <div class="dash-stats-cards">
             <div class="stats-number text-center">
-              <h3><%= current_user.meetings.count %></h3>
+              <h3><%= current_user.meetings.count || "0" %></h3>
               <p>Yakitty-Yak<br>chats</p>
             </div>
             <div class="stats-number text-center">
-              <h3>4</h3>
+              <h3><%= current_user.requests_received || "0" %></h3>
               <p>Requests<br>received</p>
             </div>
             <div class="stats-feed">
