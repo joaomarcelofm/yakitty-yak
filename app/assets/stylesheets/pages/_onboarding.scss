@@ -16,6 +16,10 @@ input[type="text"]{
 
 }
 
+.onboard-btn {
+  width: 100px;
+}
+
 .checkbox:first-child {
   margin-top: -5px;
 }
@@ -205,13 +209,19 @@ input[type="text"]{
   transform: translateX(-50%);
 }
 
-.vertical-form input{
-  margin-top: 10px;
+.vertical-form input {
   border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: none;
+}
+
+.form-line-field input{
+  margin-top: 10px;
   padding: 10px;
   color: $yak-black;
   border-width: 0px;
   width: 500px;
+  height: 50px;
 }
 
 #rounded {
