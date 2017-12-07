@@ -6,19 +6,11 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @disable_nav = true
-    @request = Request.new
-    @skills = Skill.all
-  end
-
-  def team_yaks
-    @disable_nav = true
     @request = Request.new
     @skills = Skill.all
   end
 
   def feed
-    @disable_nav = true
     @request = Request.new
     @skills = Skill.all
   end
