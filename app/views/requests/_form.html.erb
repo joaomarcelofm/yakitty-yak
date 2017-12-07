@@ -1,4 +1,13 @@
 <%= simple_form_for request do |f| %>
+  <% if request.errors.any? %>
+    <div id="error-explanation">
+      <ul>
+      <% request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= f.input :topic, label: false, placeholder: "What would you like to yak about?" %>
   <%= f.association :skill, label: false, prompt: 'Skills', collection: skills  %>
   <%= f.input :start_time, label: false, prompt: 'When', as: :select, collection: [['Today', Date.today], ['Tomorrow', Date.tomorrow]] %>

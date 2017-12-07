@@ -11,6 +11,9 @@ class Request < ApplicationRecord
 
   enum status: [ :pending, :accepted, :rejected ]
 
+  validates :topic, presence: true
+  validates :skill_id, presence: true
+  validates :start_time, presence: true
 
   def set_reciever
     User.find()
