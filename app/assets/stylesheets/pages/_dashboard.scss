@@ -5,7 +5,7 @@
 
 #side-bar {
   height: calc(100vh - 70px);
-  flex: 0 0 270px;
+  flex: 0 0 230px;
   background: $yak-yellow;
   color: $yak-white;
   padding: 20px;
@@ -145,6 +145,8 @@
 // stats
 
 .dash-stats {
+  position: relative;
+
   h2 {
     font-size: 28px;
     position: relative;
@@ -169,7 +171,7 @@
 
 .dash-stats-cards {
   padding: 30px 30px 0;
-  height: calc(100vh - 230px);
+  height: 270px;
   display: flex;
 }
 
@@ -178,18 +180,28 @@
   width: 180px;
   margin-right: 20px;
   border-radius: 10px;
+  padding-top: 20px;
 
   h3{
     font-size: 72px;
     color: $yak-light-green;
   }
+
+  p {
+    font-weight: 700;
+  }
 }
 
 .stats-feed {
   background-color: #EDEDED;
-  padding: 0px 0px;
+  padding: 0px 30px;
   border-radius: 10px;
   flex-grow: 1;
+
+  h3{
+    font-size: 28px;
+    color: $yak-light-green;
+  }
 }
 
 // form styling
