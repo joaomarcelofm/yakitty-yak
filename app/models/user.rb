@@ -116,11 +116,19 @@ class User < ApplicationRecord
     user_meetings.sort_by!(&:created_at).reverse!
   end
 
+
   def team_meetings
     team = self.team
     team.users.each do |user|
       p user.meetings
       raise
     end
+
+  def requests_received
+    requests = Request.all
+    received = []
+    requests.each { |request| received << request.receiver == self }
+    received.size
+
   end
 end
