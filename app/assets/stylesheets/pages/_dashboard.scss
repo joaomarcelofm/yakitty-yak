@@ -202,6 +202,12 @@
     font-size: 28px;
     color: $yak-light-green;
   }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0px;
+    line-height: 2em;
+  }
 }
 
 // form styling

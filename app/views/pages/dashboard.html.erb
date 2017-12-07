@@ -25,7 +25,11 @@
             </div>
             <div class="stats-feed">
               <h3>Latest topics in your network</h3>
-              <%= Request.latest_topics %>
+              <ul>
+              <% Request.latest_topics.reverse_each do |topic| %>
+                <li>✅ <%= topic %></li>
+              <% end %>
+              </ul>
             </div>
         </div>
       </div>
