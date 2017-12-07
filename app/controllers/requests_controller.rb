@@ -8,16 +8,19 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.user = current_user
-    skill = Skill.find(params[:request][:skill_id])
-    users = skill.users
-    candidates = users.reject { |u| u == current_user }
-    @request.skill = skill
-    @request.receiver = candidates.sample
+    unless params[:request][:skill_id].blank?
+      skill = Skill.find(params[:request][:skill_id])
+      users = skill.users
+      candidates = users.reject { |u| u == current_user }
+      @request.skill = skill
+      @request.receiver = candidates.sample
+    end
 
     if @request.save
       redirect_to dashboard_path
     else
-      redirect_to dashboard_path
+      @skills = Skill.pluck(:name) << "Nothing special"
+      render "pages/dashboard"
     end
   end
 

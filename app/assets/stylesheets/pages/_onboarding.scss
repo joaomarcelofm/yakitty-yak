@@ -17,6 +17,13 @@ input[type="text"]{
   cursor: pointer;
 }
 
+#user_bio{
+  height: 170px;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: none;
+}
+
 .onboard-btn {
   width: 100px;
 }
