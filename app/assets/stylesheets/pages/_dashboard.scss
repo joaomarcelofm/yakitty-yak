@@ -135,6 +135,7 @@ hr {
     font-family: 'Raleway';
     font-weight: 700;
     margin-top: 0px;
+    font-size: 28px;
   }
 }
 
@@ -147,11 +148,21 @@ hr {
 
 // form styling
 
+.flexify-form {
+  form {
+    display: flex;
+  }
+}
+
+.request_topic {
+  flex-grow: 1;
+}
+
 #request_topic {
   border-radius: 10px 0 0 10px;
   height: 50px;
   border: none;
-  width: 600px;
+  flex-grow: 1;
   color: $yak-light-green;
   -webkit-box-shadow: none;
     ::placeholder {
@@ -161,6 +172,7 @@ hr {
 
 .request_skill {
   background-color: $yak-white;
+  margin-left: 2px;
 }
 
 #request_skill_id  {
@@ -168,8 +180,14 @@ hr {
   color: $yak-light-green;
   background-color: $yak-white;
   border: none;
-  width: 150px;
+  width: 120px;
   -webkit-box-shadow: none;
+}
+
+.request_start_time {
+  background-color: $yak-white;
+  border-radius: 0px 10px 10px 0px;
+  margin-left: 2px;
 }
 
 #request_start_time  {
@@ -177,13 +195,6 @@ hr {
   background-color:rgba(0, 0, 0, 0);
   color: $yak-light-green;
   border: none;
-  width: 150px;
+  width: 120px;
   -webkit-box-shadow: none;
 }
-
-.request_start_time {
-  background-color: $yak-white;
-  border-radius: 0px 10px 10px 0px;
-}
-
-

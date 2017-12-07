@@ -4,14 +4,16 @@
     <%= render "shared/home-background" %>
     <div class="inner-content">
       <div class="title">
-        <h1> Easy connection & collaboration<br>with your network </h1>
+        <h1> Activate your network <br>with Yakitty-Yak </h1>
       </div>
       <% if current_user %>
-        <div class="empty-space"></div>
+      <div class="empty-space"></div>
       <% else %>
-        <%= link_to user_slack_omniauth_authorize_path do %>
-        <img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" />
+      <div class="top-banner-button">
+        <%= link_to user_slack_omniauth_authorize_path, class: "banner-button" do %>
+        <%= image_tag("slack-button-blue.svg") %><span style="font-weight: 400; padding-left: 8px">Sign in with</span> Slack
         <% end %>
+      </div>
       <% end %>
     </div>
     <svg height="140" viewBox="0 0 2369 169" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -30,7 +32,7 @@
   </div>
   <div class="product-details">
     <div class="container">
-      <h2 class="text-center">Building meaningful connections<br>can be a lot of fun </h2>
+      <h2 class="text-center"> Easy connection & collaboration<br>with your network</h2>
       <div class="row">
         <div class="detail-block">
           <div class="detail-content col-md-8">
@@ -38,7 +40,7 @@
               <h3 style="text-decoration: underline; text-decoration-color: #E22172">Get matched and get talking</h3>
             </div>
             <div class="detail-description">
-              <p>Connect with people who have complementary skill-sets – clear up a doubt, help out, or brainstorm</p>
+              <p>Send a skills or topic based request and quickly get a network match  – collaborate, give back to the community, and brainstorm</p>
             </div>
           </div>
           <div class="detail-image  col-md-4">
@@ -53,14 +55,39 @@
           </div>
           <div class="detail-content col-md-8">
             <div class="detail-title text-right">
-              <h3>No more awkward introductions.</h3>
-              <h3 style="text-decoration: underline; text-decoration-color: #7FD0DF; margin-top: 0px">Yakitty-Yak makes it exciting!</h3>
+              <h3>Seemless integration with Slack </h3>
+              <h3 style="text-decoration: underline; text-decoration-color: #7FD0DF; margin-top: 0px">And powerful communication tools</h3>
             </div>
             <div class="detail-description text-right">
-              <p>Want to skip past the work-talk and just get to know someone new? Get matched with a random person in your network and depend on our conversation cues to keep it interesting!</p>
+              <p>Connect with Slack and build meaningful connections without skipping a beat!</p>
             </div>
           </div>
         </div>
+      </div>
+      <div class="row">
+        <div class="detail-block">
+          <div class="detail-content col-md-8">
+            <div class="detail-title">
+              <h3 style="text-decoration: underline; text-decoration-color: #E22172">Dig deeper into your network</h3>
+            </div>
+            <div class="detail-description">
+              <p>Random matching and conversation starters promote fun connections with people around the globe </p>
+            </div>
+          </div>
+          <div class="detail-image  col-md-4">
+            <%= image_tag "links.png", class: 'pull-right' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-banner text-center">
+    <div class="bottom-banner-content">
+      <h4>Ready to get started?</h4>
+      <div class="bottom-banner-button">
+        <%= link_to user_slack_omniauth_authorize_path, class: "success-button" do %>
+        <%= image_tag("slack-button.svg") %><span style="font-weight: 400; padding-left: 8px">Sign in with</span> Slack
+        <% end %>
       </div>
     </div>
   </div>

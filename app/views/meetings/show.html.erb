@@ -7,17 +7,28 @@
           <div id="videoPreview"></div>
         </div>
         <div class="user-info col-md-4">
-          <h1>Your are yakking with <%= @meeting.request.receiver.first_name %></h1>
-          <p><%= @meeting.request.receiver.bio %></p>
-          <div class="details-icons">
+          <% if current_user == @meeting.request.user %>
+            <h1>Your are yakking with <%= @meeting.request.receiver.first_name %></h1>
+            <p><%= @meeting.request.receiver.bio %></p>
+            <div class="details-icons">
             <div class="row">
               <span class="col-md-4"><i class="fa fa-map-marker"></i> <%= @meeting.request.receiver.location %></span>
               <span class="col-md-8"><i class="fa fa-cog"></i> <%= @meeting.request.receiver.occupation %></span>
             </div>
           </div>
+          <% else %>
+            <h1>Your are yakking with <%= @meeting.request.user.first_name %></h1>
+            <p><%= @meeting.request.user.bio %></p>
+            <div class="details-icons">
+            <div class="row">
+              <span class="col-md-4"><i class="fa fa-map-marker"></i> <%= @meeting.request.user.location %></span>
+              <span class="col-md-8"><i class="fa fa-cog"></i> <%= @meeting.request.user.occupation %></span>
+            </div>
+          </div>
+          <% end %>
           <div class="details-topics">
             <h2><span style="text-decoration: underline; text-decoration-color: #E22172">Topic</span>: <%= @meeting.request.topic %></h2>
-            <h3>Here's an icebraker for your yak...</h3>
+            <h3>Here's an icebreaker for your yak...</h3>
             <p><%= @meeting.random_topic %></p>
           </div>
         </div>
