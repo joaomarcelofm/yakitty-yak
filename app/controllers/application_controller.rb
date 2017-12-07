@@ -8,11 +8,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  # def after_sign_in_path_for(resource)
-  #   if resource.onboarded == false
-  #     return edit_user_url(resource)
-  #   else
-  #     return dashboard_url
-  #   end
-  # end
+  def after_sign_in_path_for(resource)
+    if resource.onboarded == false
+      return edit_user_path(resource)
+    else
+      return dashboard_path
+    end
+  end
 end
