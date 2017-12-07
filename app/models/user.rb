@@ -119,7 +119,7 @@ class User < ApplicationRecord
   def requests_received
     requests = Request.all
     received = []
-    requests.each { |request| received << request.receiver == self }
+    requests.each { |request| received << request if request.receiver == self }
     received.size
   end
 end

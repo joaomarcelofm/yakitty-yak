@@ -10,10 +10,11 @@
 
 .checkbox input[type="checkbox"] {
   display: none;
+  cursor: pointer;
 }
 
 input[type="text"]{
-
+  cursor: pointer;
 }
 
 .onboard-btn {
@@ -237,6 +238,7 @@ input[type="text"]{
   transform: translateX(-50%);
   height: 60px;
   z-index: 3;
+  cursor: pointer;
 }
 
 .vertical-form button{
@@ -299,13 +301,13 @@ label.form-check-label {
   margin-top: 20px;
 }
 
-input[type="checkbox"]{
-  width: 15px; /*Desired width*/
-  height: 15px; /*Desired height*/
-  cursor: pointer;
-  // -webkit-appearance: none;
-  // appearance: none;
-}
+// input[type="checkbox"]{
+//   width: 15px; /*Desired width*/
+//   height: 15px; /*Desired height*/
+
+//   // -webkit-appearance: none;
+//   // appearance: none;
+// }
 
 label.form-check-label {
   font-size: 16px;

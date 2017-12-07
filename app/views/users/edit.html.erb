@@ -37,7 +37,7 @@
     <div class="step step-7 text-center last">
       <div class="title">
         <h2>Cool, we're all done!</h2>
-        <%= f.hidden_field :onboarded, value: true %>
+        <%= f.hidden_field :onboarded, input_html: { value: "true" } %>
         <%= f.submit "Let's get started", class: "success-button" %>
       </div>
       <% end %>

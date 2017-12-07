@@ -19,7 +19,6 @@ class RequestsController < ApplicationController
     else
       redirect_to dashboard_path
     end
-
   end
 
   def accept # RequestsController#accept
