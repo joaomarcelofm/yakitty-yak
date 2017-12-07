@@ -1,6 +1,6 @@
 <div class="vertical-form-container">
   <div class="vertical-form">
-    <span class="up-arrow-form"><%= image_tag "down-arrow.png", class: "up-arrow-image" %></span>
+    <!-- # <span class="up-arrow-form"><= image_tag "down-arrow.png", class: "up-arrow-image" %></span> -->
     <div class="step active step-1">
       <h1>Hi <%= current_user.first_name %>!</h1>
       <div class="content text-center">
@@ -37,6 +37,7 @@
     <div class="step step-7 text-center last">
       <div class="title">
         <h2>Cool, we're all done!</h2>
+        <%= f.hidden_field :onboarded, value: true %>
         <%= f.submit "Let's get started"%>
       </div>
       <% end %>
@@ -46,8 +47,3 @@
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
   <script src="assets/javascripts/form.js"></script>
-  <script>
-  $('.img-check').on('click', function () {
-    $(this).toggleClass('check')
-  })
-</script>

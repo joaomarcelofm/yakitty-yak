@@ -17,10 +17,6 @@ class User < ApplicationRecord
   has_many :interests, through: :user_interests
   has_many :events
 
-  # accepts_nested_attributes_for :skills
-
-
-
   def self.from_omniauth(auth)
 
     user_params = auth.slice(:provider, :uid)
@@ -118,5 +114,13 @@ class User < ApplicationRecord
       user_meetings << meeting if meeting.request.receiver == self
     end
     user_meetings.sort_by!(&:created_at).reverse!
+  end
+
+  def team_meetings
+    team = self.team
+    team.users.each do |user|
+      p user.meetings
+      raise
+    end
   end
 end
