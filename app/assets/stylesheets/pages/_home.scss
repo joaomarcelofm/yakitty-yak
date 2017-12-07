@@ -73,3 +73,31 @@ canvas {
 .empty-space{
   height: 65px;
 }
+
+// cta banner
+
+.bottom-banner {
+  background-image: url("bottom-banner.png");
+  background-size: cover;
+  height: 270px;
+  margin-top: 60px;
+}
+
+.bottom-banner-content {
+  h4 {
+    padding-top: 70px;
+    padding-bottom: 30px;
+    font-size: 31px;
+  }
+  img {
+    height: 20px;
+  }
+}
+
+.top-banner-button {
+  padding-top: 30px;
+  img {
+    height: 20px;
+    margin-top: 0px;
+  }
+}

@@ -25,7 +25,22 @@
 
 .success-button:hover {
   text-decoration: none;
-  color: $yak-green;
+  color: $yak-white;
+}
+
+.banner-button {
+  background-color: $yak-white;
+  border-radius: 10px;
+  font-family: Raleway;
+  font-weight: 700;
+  color: $yak-blue;
+  border: none;
+  padding: 15px 15px;
+}
+
+.banner-button:hover {
+  text-decoration: none;
+  color: $yak-blue;
 }
 
 .negative-button {
