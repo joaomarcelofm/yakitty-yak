@@ -9,7 +9,7 @@
   background: $yak-yellow;
   color: $yak-white;
   padding: 20px;
-  margin-top: 70px;
+
   h1 {
     font-size: 36px;
     margin-top: 0px;
@@ -47,7 +47,6 @@
   padding: 20px 30px;
   background: $yak-light-green;
   color: $yak-white;
-  margin-top: 70px;
   p {
     font-size: 28px;
   }
@@ -78,14 +77,6 @@
       transform: translateX(-50%);
     }
   }
-}
-
-
-.pages.dashboard .navbar-wagon{
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-
 }
 
 .yak-feed {
