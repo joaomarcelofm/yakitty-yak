@@ -78,4 +78,12 @@ class Request < ApplicationRecord
     }
     client.chat_postMessage message
   end
+
+  def self.latest_topics
+    requests = Request.all
+    last_requests = requests.last(3)
+    topics = []
+    last_requests.each { |request| topics << request.topic }
+    topics
+  end
 end

@@ -5,7 +5,7 @@
 
 #side-bar {
   height: calc(100vh - 70px);
-  flex: 0 0 270px;
+  flex: 0 0 230px;
   background: $yak-yellow;
   color: $yak-white;
   padding: 20px;
@@ -53,6 +53,8 @@
   }
 }
 
+// feed
+
 .dash-feed {
   position: relative;
 
@@ -86,12 +88,6 @@
 
 }
 
-hr {
-     color: $yak-gray;
-     background: $yak-white;
-     height: 1px;
-}
-
 .yak-feed {
   padding: 95px 30px 0;
   overflow: scroll;
@@ -119,14 +115,14 @@ hr {
     margin-right: 10px;
   }
   .user-1{
-  position: absolute;
-  top: 15px;
-  left: 15px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
   }
   .user-2{
-  position: absolute;
-  top: 50px;
-  left: 50px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
   }
 }
 
@@ -145,6 +141,74 @@ hr {
   }
 }
 
+
+// stats
+
+.dash-stats {
+  position: relative;
+
+  h2 {
+    font-size: 28px;
+    position: relative;
+    background-color: $yak-white;
+    margin: 0;
+    padding: 30px;
+    width: 100%;
+    z-index: 1;
+
+    &:after {
+      content: "";
+      position: absolute;
+      background-color: #BFBFBF;
+      height: 1px;
+      width: calc(100% - 60px);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.dash-stats-cards {
+  padding: 30px 30px 0;
+  height: 270px;
+  display: flex;
+}
+
+.stats-number {
+  background-color: #EDEDED;
+  width: 180px;
+  margin-right: 20px;
+  border-radius: 10px;
+  padding-top: 20px;
+
+  h3{
+    font-size: 72px;
+    color: $yak-light-green;
+  }
+
+  p {
+    font-weight: 700;
+  }
+}
+
+.stats-feed {
+  background-color: #EDEDED;
+  padding: 0px 30px;
+  border-radius: 10px;
+  flex-grow: 1;
+
+  h3{
+    font-size: 28px;
+    color: $yak-light-green;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0px;
+    line-height: 2em;
+  }
+}
 
 // form styling
 
@@ -165,7 +229,7 @@ hr {
   flex-grow: 1;
   color: $yak-light-green;
   -webkit-box-shadow: none;
-    ::placeholder {
+  ::placeholder {
     color: $yak-light-green;
   }
 }

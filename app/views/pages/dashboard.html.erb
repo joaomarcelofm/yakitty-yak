@@ -11,23 +11,26 @@
           <%= render 'requests/form', request: @request, skills: @skills %>
         </div>
       </div>
-      <div class="dash-feed">
-        <h2>Your Yaktivity</h2>
-        <div class="yak-feed">
-          <% current_user.meeting_list.each do |meeting| %>
-          <div class="yaktivity">
-            <div class='yaktivity-users'>
-              <%= image_tag meeting.request.user.image, class: "avatar user-1" %>
-              <%= image_tag meeting.request.receiver.image, class: "avatar user-2" %>
+      <div class="dash-stats">
+        <h2>Your Yakstats</h2>
+
+        <div class="dash-stats-cards">
+            <div class="stats-number text-center">
+              <h3><%= current_user.meetings.count || "0" %></h3>
+              <p>Yakitty-Yak<br>chats</p>
             </div>
-            <div class='yaktivity-title'>
-              <h3><%= meeting.request.user.first_name %> and <%= meeting.request.receiver.first_name %></h3>
-              <div class="yaktivity-details">
-                <p><%= meeting.request.topic %></p>
-              </div>
+            <div class="stats-number text-center">
+              <h3><%= current_user.requests_received || "0" %></h3>
+              <p>Requests<br>received</p>
             </div>
-          </div>
-          <% end %>
+            <div class="stats-feed">
+              <h3>Latest topics in your network</h3>
+              <ul>
+              <% Request.latest_topics.reverse_each do |topic| %>
+                <li>✅ <%= topic %></li>
+              <% end %>
+              </ul>
+            </div>
         </div>
       </div>
     </div>
