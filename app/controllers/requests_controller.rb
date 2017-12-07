@@ -15,9 +15,9 @@ class RequestsController < ApplicationController
     @request.receiver = candidates.sample
 
     if @request.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
-      render 'new'
+      redirect_to dashboard_path
     end
 
   end
