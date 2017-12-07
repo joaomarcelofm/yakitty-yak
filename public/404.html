@@ -226,7 +226,6 @@
     text-decoration: none;
     color:#fff;
     border:2px solid white;
-    border-radius: 99px;
     padding:9px 0 10px;
     width:195px;
     overflow: hidden;
@@ -340,18 +339,25 @@
       background-color: rgba(255, 255, 255, 1) !important;
     }
 
-    .border-button {
-      color: rgba(255, 255, 255, 1) !important;
-      border-color: rgba(255, 255, 255, 1) !important;
-    }
-    .button {
-      background-color: rgba(255, 255, 255, 1) !important;
-      color: #FFFFFF !important;
-    }
-
     .shadow {
       box-shadow: 0 0 60px #000000;
     }
+
+    .reject-button {
+      background-color: #F38131;
+      border-radius: 10px;
+      font-family: Raleway;
+      font-weight: 700;
+      color: #FCFCFC;
+      border: none;
+      padding: 15px 15px;
+    }
+
+    .reject-button:hover {
+      text-decoration: none;
+      color: #FCFCFC;
+    }
+
 
 </style>
 
@@ -366,7 +372,7 @@
       404
     </div>
     <div class="context sign-text-color">
-      Yikes! The page you're<br>
+      Yikes! The page you're <br>
       looking for does not exist.
     </div>
   </div>
@@ -381,7 +387,7 @@
     </p>
   </div>
   <div class="buttons-container">
-    <a class="border-button" href="https://www.yakitty-yak.world" target="_blank"><span class="fa fa-home"></span> Home </a>
+    <a class="reject-button" href="https://www.yakitty-yak.world" target="_blank"><span class="fa fa-home"></span> Home </a>
   </div>
 </div>
 
