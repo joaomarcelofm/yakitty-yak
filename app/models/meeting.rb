@@ -59,4 +59,12 @@ class Meeting < ApplicationRecord
 
     icebreaker.sample
   end
+
+  def self.latest_topics
+    meetings = Meeting.all
+    last_meetings = meetings.last(3)
+    topics = []
+    last_meetings.each { |meeting| topics << meeting.request.topic }
+    topics
+  end
 end
