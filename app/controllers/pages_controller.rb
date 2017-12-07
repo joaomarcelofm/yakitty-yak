@@ -16,4 +16,10 @@ class PagesController < ApplicationController
     @request = Request.new
     @skills = Skill.all
   end
+
+  def feed
+    @disable_nav = true
+    @request = Request.new
+    @skills = Skill.all
+  end
 end

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get '/meetings', to: "pages#meetings"
   get '/dashboard', to: "pages#dashboard"
+  get '/feed', to: "pages#feed"
   get '/calendar', to: "pages#calendar"
   get '/team-yaks', to: "pages#team_yaks"
 
