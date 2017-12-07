@@ -123,12 +123,12 @@ class User < ApplicationRecord
       p user.meetings
       raise
     end
+  end
 
   def requests_received
     requests = Request.all
     received = []
     requests.each { |request| received << request.receiver == self }
     received.size
-
   end
 end
