@@ -48,6 +48,12 @@
   text-decoration: none;
 }
 
+.navbar-wagon-link:focus {
+  color: $yak-yellow;
+  text-decoration: none;
+}
+
+
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
