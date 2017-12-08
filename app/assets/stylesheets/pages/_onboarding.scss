@@ -17,8 +17,24 @@ input[type="text"]{
   cursor: pointer;
 }
 
+#user_bio{
+  height: 130px;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: none;
+}
+
 .onboard-btn {
   width: 100px;
+}
+
+.submit {
+  margin-top: 30px;
+  font-size: 22px;
+}
+
+input[type="submit"]:focus {
+  outline: none !important;
 }
 
 .checkbox:first-child {
