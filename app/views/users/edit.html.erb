@@ -25,7 +25,7 @@
         <h2>What are some of your many skills?</h2>
       </div>
       <div class="image-skills">
-        <%= f.association :skills, collection: Skill.all, as: :check_boxes, multiple: true, label: false, include_hidden: false, label_method: lambda { |s| image_tag("#{s.name.downcase}.png", class: "icons img-check" ).html_safe } %>
+        <%= f.association :skills, collection: Skill.all, as: :check_boxes, multiple: true, label: false, include_hidden: false, label_method: lambda { |s| image_tag("#{s.name.downcase}.png", label: "#{s.name}", class: "icons img-check" ).html_safe } %>
       </div>
     </div>
     <div class="step step-5 text-center">
@@ -38,7 +38,7 @@
       <div class="title">
         <h2>Cool, we're all done!</h2>
         <%= f.hidden_field :onboarded, value: true %>
-        <%= f.submit "Let's get started", class: "success-button" %>
+        <%= f.submit "Let's get started", class: "success-button submit" %>
       </div>
       <% end %>
     </div>
