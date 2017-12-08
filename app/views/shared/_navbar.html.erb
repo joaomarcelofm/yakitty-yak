@@ -12,14 +12,16 @@
         <div class="dropdown">
           <%= image_tag current_user.image, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <div class="inline-dropdown">
             <li>
               <%= link_to edit_user_path(current_user) do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+               <h4>🤖 &nbsp</h4> <p>Profile</p>
               <% end %>
             </li>
+            </div>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <h4 class-"smaller-icon">👋 &nbsp</h4> <p>Log out</p>
               <% end %>
             </li>
           </ul>

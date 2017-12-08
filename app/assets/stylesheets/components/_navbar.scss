@@ -59,6 +59,17 @@
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  padding-top: 12px;
+  p {
+    display: inline;
+    font-size: 17px;
+    vertical-align: middle;
+  }
+  h4 {
+    display: inline;
+    font-size: 23px;
+    vertical-align: bottom;
+  }
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
@@ -84,3 +95,5 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+
