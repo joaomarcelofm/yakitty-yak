@@ -1,35 +1,35 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "yakitty-avatar.png" %>
+  <%= image_tag "yakitty-avatar.png" %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
-      <%= link_to 'Dashboard', dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag current_user.image, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <div class="inline-dropdown">
+    <%= link_to 'Dashboard', dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <%= image_tag current_user.image, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <!-- <div class="inline-dropdown"> -->
             <li>
               <%= link_to edit_user_path(current_user) do %>
-               <h4>🤖 &nbsp</h4> <p>Profile</p>
+              <span class="bigger-icon">🤖 &nbsp</span> <span class="small-text">Profile </span>
               <% end %>
             </li>
-            </div>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-              <h4 class-"smaller-icon">👋 &nbsp</h4> <p>Log out</p>
-              <% end %>
-            </li>
-          </ul>
-        </div>
+         <!--  </div> -->
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <span class="bigger-icon">👋 &nbsp</span> <span class="small-text">Log out</span>
+            <% end %>
+          </li>
+        </ul>
       </div>
+    </div>
     <% else %>
-      <%= link_to "About", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "How it works", root_path(anchor: "how-it-works"), class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "About", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "How it works", root_path(anchor: "how-it-works"), class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 </div>
